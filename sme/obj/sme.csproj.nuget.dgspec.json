@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Synergy Marine 12\\source\\repos\\sme\\sme\\sme.csproj": {}
+    "C:\\Users\\Synergy Marine 12\\Documents\\GitHub\\sme\\sme\\sme.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Synergy Marine 12\\source\\repos\\sme\\sme\\sme.csproj": {
+    "C:\\Users\\Synergy Marine 12\\Documents\\GitHub\\sme\\sme\\sme.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Synergy Marine 12\\source\\repos\\sme\\sme\\sme.csproj",
+        "projectUniqueName": "C:\\Users\\Synergy Marine 12\\Documents\\GitHub\\sme\\sme\\sme.csproj",
         "projectName": "sme",
-        "projectPath": "C:\\Users\\Synergy Marine 12\\source\\repos\\sme\\sme\\sme.csproj",
+        "projectPath": "C:\\Users\\Synergy Marine 12\\Documents\\GitHub\\sme\\sme\\sme.csproj",
         "packagesPath": "C:\\Users\\Synergy Marine 12\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Synergy Marine 12\\source\\repos\\sme\\sme\\obj\\",
+        "outputPath": "C:\\Users\\Synergy Marine 12\\Documents\\GitHub\\sme\\sme\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

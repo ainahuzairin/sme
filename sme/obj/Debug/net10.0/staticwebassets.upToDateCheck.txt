@@ -1,13 +1,32 @@
 wwwroot\css\site.css
 wwwroot\favicon.ico
-wwwroot\images\ChatGPT Image Jul 17, 2026, 12_47_13 PM.png
+wwwroot\images\awards-hero-bg.png
+wwwroot\images\career-hero-bg.png
+wwwroot\images\clients-hero-bg.png
+wwwroot\images\clients\hgis.png
+wwwroot\images\clients\ipc-malaysia.jpg
+wwwroot\images\clients\lumut-port.png
+wwwroot\images\clients\mrcsb.jpg
+wwwroot\images\clients\mubadala-energy.jpg
+wwwroot\images\clients\petrofac.jpg
+wwwroot\images\clients\petronas-carigali.jpg
+wwwroot\images\clients\posco-malaysia.jpg
+wwwroot\images\clients\totalenergies.png
+wwwroot\images\clients\uzma.jpg
+wwwroot\images\clients\vantris-energy.png
+wwwroot\images\companyprofile-hero-bg.png
 wwwroot\images\contact-hero-bg.png
+wwwroot\images\cp-hero-bg.png
+wwwroot\images\favicon-32.png
 wwwroot\images\hero-port.jpg
 wwwroot\images\hero-port.png
 wwwroot\images\logo.png
+wwwroot\images\partner-with-us.jpg
+wwwroot\images\policies-hero-bg.jpg
 wwwroot\images\team-handshake.png
 wwwroot\images\team-skyline.jpg
 wwwroot\images\team-skyline.png
+wwwroot\images\track-record-hero-bg.png
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
@@ -69,65 +88,65 @@ wwwroot\lib\jquery\dist\jquery.slim.js
 wwwroot\lib\jquery\dist\jquery.slim.min.js
 wwwroot\lib\jquery\dist\jquery.slim.min.map
 wwwroot\lib\jquery\LICENSE.txt
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\css\site.css
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap.css
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\js\bootstrap.js
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.min.js
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\jquery-validation\dist\additional-methods.js
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\jquery-validation\dist\additional-methods.min.js
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\jquery-validation\dist\jquery.validate.js
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\jquery-validation\LICENSE.md
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\jquery\dist\jquery.js
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\jquery\dist\jquery.min.js
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\jquery\dist\jquery.min.map
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\jquery\dist\jquery.slim.js
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\jquery\dist\jquery.slim.min.js
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\jquery\dist\jquery.slim.min.map
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\jquery\LICENSE.txt
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\favicon.ico
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\js\site.js
-C:\Users\Synergy Marine 12\source\repos\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\jquery\dist\jquery.slim.min.js
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\jquery\dist\jquery.slim.js
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\jquery\dist\jquery.min.map
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\jquery\dist\jquery.min.js
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\jquery\dist\jquery.js
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\jquery-validation\LICENSE.md
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\jquery-validation\dist\jquery.validate.js
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\jquery-validation\dist\additional-methods.min.js
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\jquery-validation\dist\additional-methods.js
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.min.js
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\js\bootstrap.js
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap.css
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\css\site.css
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\js\site.js
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\favicon.ico
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\jquery\LICENSE.txt
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\wwwroot\lib\jquery\dist\jquery.slim.min.map

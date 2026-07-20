@@ -31,7 +31,7 @@ namespace sme.Controllers
             return View();
         }
 
-        public IActionResult Client()
+        public IActionResult Clients()
         {
             return View();
         }

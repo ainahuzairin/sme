@@ -1,0 +1,586 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Company Policies";
+}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+        --sm-red: #E31E24;
+        --sm-navy: #0B1F3A;
+        --sm-navy-light: #132a4d;
+        --sm-gray: #6b7280;
+        --sm-border: #e5e7eb;
+    }
+
+    .sm-contact-page {
+        font-family: 'Poppins', sans-serif;
+        color: #1f2937;
+        overflow-x: hidden;
+    }
+
+        .sm-contact-page * {
+            box-sizing: border-box;
+        }
+
+    /* ---------- NAV ---------- */
+    .sm-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 60px;
+        background: #fff;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        position: relative;
+        z-index: 20;
+    }
+
+        .sm-nav .sm-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 1.15rem;
+            color: var(--sm-navy);
+        }
+
+            .sm-nav .sm-logo span {
+                color: var(--sm-red);
+            }
+
+    .sm-nav-links {
+        display: flex;
+        gap: 38px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+        .sm-nav-links a {
+            text-decoration: none;
+            color: var(--sm-navy);
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            padding-bottom: 6px;
+            transition: color .3s ease;
+        }
+
+            .sm-nav-links a.active, .sm-nav-links a:hover {
+                color: var(--sm-red);
+            }
+
+                .sm-nav-links a.active::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 2px;
+                    background: var(--sm-red);
+                }
+
+    /* ---------- HERO ---------- */
+    .sm-hero {
+        position: relative;
+        min-height: 420px;
+        display: flex;
+        align-items: center;
+        padding: 0 60px;
+        overflow: hidden;
+    }
+
+    .sm-hero-bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 45%;
+        z-index: 0;
+    }
+
+    .sm-hero-overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background: linear-gradient(100deg, rgba(11,31,58,0.85) 0%, rgba(11,31,58,0.55) 42%, rgba(11,31,58,0.15) 100%);
+        pointer-events: none;
+    }
+
+    .sm-hero::after {
+        content: "";
+        position: absolute;
+        right: -6%;
+        top: 0;
+        bottom: 0;
+        width: 45%;
+        background: linear-gradient(120deg, transparent 46%, rgba(227,30,36,0.5) 47.5%, transparent 49%);
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .sm-hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 600px;
+    }
+
+        .sm-hero-content h1 {
+            color: #fff;
+            font-size: 2.6rem;
+            font-weight: 800;
+            margin: 0 0 14px 0;
+            letter-spacing: .5px;
+            opacity: 0;
+            transform: translateY(24px);
+        }
+
+        .sm-hero-content p {
+            color: #d7deea;
+            font-size: 1.05rem;
+            margin: 0;
+            max-width: 460px;
+            opacity: 0;
+            transform: translateY(24px);
+        }
+
+    .sm-hero.sm-loaded .sm-hero-content h1 {
+        animation: smFadeUp .8s ease forwards .15s;
+    }
+
+    .sm-hero.sm-loaded .sm-hero-content p {
+        animation: smFadeUp .8s ease forwards .4s;
+    }
+
+    @@keyframes smFadeUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+
+    /* ---------- REVEAL ---------- */
+    .sm-reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity .8s ease, transform .8s ease;
+    }
+
+        .sm-reveal.sm-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    .sm-reveal-delay-1.sm-visible {
+        transition-delay: .1s;
+    }
+
+    .sm-reveal-delay-2.sm-visible {
+        transition-delay: .2s;
+    }
+
+    .sm-reveal-delay-3.sm-visible {
+        transition-delay: .3s;
+    }
+
+    .sm-reveal-delay-4.sm-visible {
+        transition-delay: .4s;
+    }
+
+    /* ---------- POLICIES ---------- */
+    .sm-policies {
+        padding: 70px 60px 90px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .sm-policies-label {
+        color: var(--sm-red);
+        font-weight: 700;
+        letter-spacing: 2px;
+        font-size: .8rem;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+    }
+
+    .sm-policies h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--sm-navy);
+        margin: 0 0 12px 0;
+    }
+
+    .sm-policies-desc {
+        font-size: .95rem;
+        color: var(--sm-gray);
+        max-width: 640px;
+        line-height: 1.6;
+        margin: 0 0 40px 0;
+    }
+
+    /* Choice bar */
+    .sm-policy-tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 34px;
+        border-bottom: 1px solid var(--sm-border);
+        padding-bottom: 22px;
+    }
+
+    .sm-policy-tab {
+        appearance: none;
+        border: 1px solid var(--sm-border);
+        background: #fff;
+        color: var(--sm-navy);
+        font-family: inherit;
+        font-weight: 600;
+        font-size: .85rem;
+        padding: 10px 20px;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: background .25s ease, color .25s ease, border-color .25s ease, transform .2s ease;
+    }
+
+        .sm-policy-tab:hover {
+            border-color: var(--sm-red);
+            color: var(--sm-red);
+            transform: translateY(-2px);
+        }
+
+        .sm-policy-tab.active {
+            background: var(--sm-red);
+            border-color: var(--sm-red);
+            color: #fff;
+        }
+
+    /* Content panel */
+    .sm-policy-panel {
+        background: #fff;
+        border: 1px solid var(--sm-border);
+        border-radius: 14px;
+        padding: 42px 46px;
+        box-shadow: 0 20px 40px rgba(11,31,58,0.06);
+        opacity: 0;
+        transform: translateY(14px);
+        transition: opacity .4s ease, transform .4s ease;
+    }
+
+        .sm-policy-panel.sm-panel-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    .sm-policy-tag {
+        display: inline-block;
+        color: var(--sm-red);
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        font-size: .72rem;
+        text-transform: uppercase;
+        background: rgba(227,30,36,0.08);
+        padding: 5px 12px;
+        border-radius: 20px;
+        margin-bottom: 14px;
+    }
+
+    .sm-policy-panel h3 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--sm-navy);
+        margin: 0 0 20px 0;
+    }
+
+    .sm-policy-panel p {
+        font-size: .92rem;
+        line-height: 1.75;
+        color: #4b5563;
+        margin: 0 0 16px 0;
+    }
+
+        .sm-policy-panel p:last-child {
+            margin-bottom: 0;
+        }
+
+    .sm-policy-panel h4 {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--sm-navy);
+        margin: 22px 0 10px 0;
+    }
+
+    @@media (max-width: 700px) {
+        .sm-policy-panel {
+            padding: 30px 26px;
+        }
+    }
+
+    /* ---------- FOOTER ---------- */
+    .sm-footer {
+        background: var(--sm-navy);
+        color: #c9d3e3;
+        padding: 50px 60px 20px;
+    }
+
+    .sm-footer-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr 1fr;
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-bottom: 30px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    @@media (max-width: 800px) {
+        .sm-footer-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .sm-footer-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 800;
+        color: #fff;
+        font-size: 1.05rem;
+        margin-bottom: 14px;
+    }
+
+        .sm-footer-brand span {
+            color: var(--sm-red);
+        }
+
+    .sm-footer p.sm-tagline {
+        font-size: .85rem;
+        line-height: 1.6;
+        color: #9aa7bd;
+        max-width: 280px;
+    }
+
+    .sm-footer h5 {
+        color: #fff;
+        font-size: .9rem;
+        font-weight: 700;
+        margin: 0 0 16px 0;
+        letter-spacing: .5px;
+        text-transform: uppercase;
+    }
+
+    .sm-footer ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+        .sm-footer ul a {
+            color: #9aa7bd;
+            text-decoration: none;
+            font-size: .88rem;
+            transition: color .25s ease;
+        }
+
+            .sm-footer ul a:hover {
+                color: var(--sm-red);
+            }
+
+    .sm-social {
+        display: flex;
+        gap: 12px;
+        margin-top: 16px;
+    }
+
+        .sm-social a {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            transition: background .25s ease, transform .25s ease;
+        }
+
+            .sm-social a:hover {
+                background: var(--sm-red);
+                transform: translateY(-3px);
+            }
+
+    .sm-copyright {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-top: 18px;
+        font-size: .78rem;
+        color: #7f8caa;
+        text-align: center;
+    }
+</style>
+
+<div class="sm-contact-page">
+
+    <!-- HERO -->
+    <section class="sm-hero" id="smHero">
+        <img class="sm-hero-bg" src="~/images/policies-hero-bg.png" alt="" />
+        <div class="sm-hero-overlay"></div>
+        <div class="sm-hero-content">
+            <h1>COMPANY<span style="color:red">POLICIES</span> </h1>
+            <p>Our commitments to safety, integrity, and sustainability shape every decision we make across the fleet and the organisation.</p>
+        </div>
+    </section>
+
+    <!-- POLICIES -->
+    <section class="sm-policies">
+        <div class="sm-policies-label sm-reveal">OUR COMMITMENTS</div>
+        <h2 class="sm-reveal sm-reveal-delay-1">Company Policies</h2>
+        <p class="sm-policies-desc sm-reveal sm-reveal-delay-1">Select a policy below to read how we apply it across the fleet and the organisation.</p>
+
+        <div class="sm-policy-tabs sm-reveal sm-reveal-delay-2" id="smPolicyTabs" role="tablist">
+            <button type="button" class="sm-policy-tab active" data-index="0">Health &amp; Safety</button>
+            <button type="button" class="sm-policy-tab" data-index="1">Anti-Corruption</button>
+            <button type="button" class="sm-policy-tab" data-index="2">Drug &amp; Alcohol</button>
+            <button type="button" class="sm-policy-tab" data-index="3">Environmental</button>
+            <button type="button" class="sm-policy-tab" data-index="4">Ethics</button>
+            <button type="button" class="sm-policy-tab" data-index="5">Personnel</button>
+            <button type="button" class="sm-policy-tab" data-index="6">Security</button>
+            <button type="button" class="sm-policy-tab" data-index="7">Stop Work Authority</button>
+        </div>
+
+        <div class="sm-policy-panel sm-panel-visible sm-reveal sm-reveal-delay-3" id="smPolicyPanel">
+            <!-- content injected by script -->
+        </div>
+    </section>
+
+    <script>
+            (function() {
+                var policies = [
+                    {
+                        tag: "HSE",
+                        title: "Health &amp; Safety Policy",
+                        html: "<p>At Synergy Marine, the safety and wellbeing of our people are treated with the same weight as any other core business goal. Leadership, right up to the most senior levels, is fully invested in building and sustaining a work environment that protects lives at sea and prevents injury.</p>" +
+                            "<p>Our Safety Management System (SMS) has been built for both our shore offices and our fleet, aligned with the ISM Code, international maritime law, flag state rules, and every other regulation that applies to our operations.</p>" +
+                            "<p>The SMS lays out safe operating procedures on board and readiness plans for emergencies, with clear communication channels linking shore-based teams, shipboard crew, and the wider organisation.</p>" +
+                            "<p>By putting practical controls in place against every risk we identify, we keep accidents, near-misses, and hazardous situations to a minimum. When incidents do occur, we report them, learn from them, and act to stop them happening again.</p>" +
+                            "<p>Through regular internal communication and audits, we make sure every employee understands this Policy and knows how to apply the relevant safety instructions and procedures to their own role.</p>" +
+                            "<p>Every person in the Company, from the Managing Director down to individual workers on site, along with any contractor or third party engaged by us, is accountable for how their actions — or inaction — affect the safety of themselves and those around them.</p>" +
+                            "<p>Management at every level regularly reviews how well our Safety Management System and the people running it are performing, and we keep improving it as part of an ongoing process.</p>"
+                    },
+                    {
+                        tag: "Ethics",
+                        title: "Global Anti-Corruption Policy",
+                        html: "<p>Synergy Marine holds itself to the highest standards of ethics and integrity, and we are committed to fully complying with anti-corruption and anti-bribery laws wherever we operate. This Policy works alongside our Code of Conduct to give clear rules and practical guidance for situations that may involve corruption.</p>" +
+                            "<p>It applies to everyone working for or on behalf of Synergy Marine. Compliance is not optional — any breach may lead to disciplinary action, including termination of employment.</p>" +
+                            "<h4>Anti-Corruption Law</h4>" +
+                            "<p>We have both a legal and moral duty to reject corruption in every form it takes. This means actively complying with anti-corruption laws in every country where we do business, and where local laws conflict, following whichever standard is stricter.</p>" +
+                            "<p>Synergy Marine and its staff worldwide fall under numerous anti-corruption and anti-bribery laws, including the Norwegian Penal Code, Singapore's Prevention of Corruption Act (\"PCA\"), the UK Bribery Act 2010 (\"UKBA\"), and the US Foreign Corrupt Practices Act (\"FCPA\").</p>"
+                    },
+                    {
+                        tag: "Safety",
+                        title: "Drug &amp; Alcohol Policy",
+                        html: "<p>Alcohol and controlled substances can seriously compromise health, safety, and general wellbeing on board. Using, possessing, supplying, hiding, transporting, buying, manufacturing, promoting, selling, or being under the influence of any 'Prohibited Substance' is strictly not allowed.</p>" +
+                            "<p>Drinking alcohol on board is prohibited, as is being impaired enough by alcohol to put the safety of yourself or others at risk. This rule covers everyone who works, visits, or provides services on any vessel owned or managed by the Company.</p>" +
+                            "<p>Anyone employed by the Company who breaches this Policy can expect summary dismissal. Third-party personnel found in breach will be removed from the vessel.</p>" +
+                            "<p>The Company reserves the right to carry out breath, blood, or urine testing, and to search individuals and their belongings at any time.</p>" +
+                            "<p>Full enforcement details for this Policy are set out in the 'Drug and Alcohol Control' procedure, SMS Section 06. Synergy Marine carries out drug and alcohol testing on a routine, random, and \"with cause\" basis.</p>"
+                    },
+                    {
+                        tag: "Environment",
+                        title: "Environmental Protection Policy",
+                        html: "<p>Synergy Marine is dedicated to preventing environmental harm, factoring in legal requirements and the significant impacts our operations may have, particularly on marine ecosystems. We do this by reducing harmful discharges — whether routine or accidental — and managing our use of natural resources responsibly.</p>" +
+                            "<p>We concentrate our efforts where our operations carry the greatest risk of environmental harm, reducing that risk through careful risk assessment, proper waste and garbage segregation, thoughtful voyage planning, and having pollution response equipment ready.</p>" +
+                            "<p>Everyone in the Company, from the Managing Director to individual workers on site, along with any contractor engaged by us, shares responsibility for the environmental impact of their own actions and omissions.</p>"
+                    },
+                    {
+                        tag: "Integrity",
+                        title: "Ethics Policy",
+                        html: "<p>We conduct our business honestly and ethically, without resorting to corrupt practices or bribery to gain an unfair edge, and we keep our operations aligned with the laws and regulations of every country we work in.</p>" +
+                            "<p>Openness, trust, and integrity define how we do business. Bribery and corruption damage the communities where they take place — they weaken economies, distort markets, and hold back development.</p>" +
+                            "<p>We expect every employee to deal honestly with clients, vendors, and each other, respecting individual rights and keeping their conduct free of discrimination, corruption, defamation, or harassment. This isn't just something we value culturally — it's also a legal obligation.</p>"
+                    },
+                    {
+                        tag: "People",
+                        title: "Personnel Policy",
+                        html: "<p>Synergy Marine works hard to remain an employer of choice for people looking to build a career in the marine industry, offering an environment where quality, integrity, innovation, and excellence are recognised and rewarded through genuine career growth.</p>" +
+                            "<p>Our Human Resources function, part of the Company's SMS, is built around industry best practice and meets regulatory, legal, and customer requirements. We build a stable, motivated, and skilled workforce by recruiting the right people for the right roles.</p>" +
+                            "<p>Every employee is treated fairly and with respect, and we do not tolerate discrimination on the basis of sex, race, age, religion, sexuality, or disability.</p>"
+                    },
+                    {
+                        tag: "Security",
+                        title: "Security Policy",
+                        html: "<p>Synergy Marine ensures effective security measures are in place across Company-owned and managed vessels, in line with the IMO's amendments to SOLAS Chapter XI-2 and Parts A&amp;B of the International Ship and Port Facility Security Code (ISPS).</p>" +
+                            "<p>A shore-based Company Security Officer has been appointed with the authority to build, roll out, and maintain effective security practices. On board, the Master holds ultimate authority and responsibility for decisions concerning the ship's security.</p>"
+                    },
+                    {
+                        tag: "Safety",
+                        title: "Stop Work Authority",
+                        html: "<p>Stop Work Authority (SWA) gives every employee the right — and the duty — to halt any job that is unsafe or feels unsafe. Any employee can pause or shut down a task at any time or place if an unsafe condition is suspected.</p>" +
+                            "<p>If you or a colleague are ever unsure whether an operation is being carried out safely, it is your duty to stop it immediately until the situation is resolved or the doubt cleared up. Stopping unsafe work protects people from injury and helps prevent accidents before they happen.</p>" +
+                            "<p>Synergy Marine stands fully behind any good-faith use of SWA.</p>"
+                    }
+                ];
+
+                var tabs = document.querySelectorAll('#smPolicyTabs .sm-policy-tab');
+                var panel = document.getElementById('smPolicyPanel');
+
+                function renderPanel(index) {
+                    var p = policies[index];
+                    panel.innerHTML = '<span class="sm-policy-tag">' + p.tag + '</span><h3>' + p.title + '</h3>' + p.html;
+                }
+
+                function showIndex(index) {
+                    tabs.forEach(function(t) {
+                        t.classList.toggle('active', t.getAttribute('data-index') === String(index));
+                    });
+
+                    panel.classList.remove('sm-panel-visible');
+                    setTimeout(function() {
+                        renderPanel(index);
+                        panel.classList.add('sm-panel-visible');
+                    }, 180);
+                }
+
+                tabs.forEach(function(tab) {
+                    tab.addEventListener('click', function() {
+                        var index = parseInt(tab.getAttribute('data-index'), 10);
+                        showIndex(index);
+                    });
+                });
+
+                // Initial render
+                renderPanel(0);
+                requestAnimationFrame(function() {
+                    panel.classList.add('sm-panel-visible');
+                });
+
+                // Hero entrance animation
+                var hero = document.getElementById('smHero');
+                window.requestAnimationFrame(function() {
+                    setTimeout(function() { hero.classList.add('sm-loaded'); }, 50);
+                });
+
+                // Scroll reveal
+                var revealEls = document.querySelectorAll('.sm-reveal');
+                var observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('sm-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+                revealEls.forEach(function(el) { observer.observe(el); });
+            })();
+    </script>
+</div>

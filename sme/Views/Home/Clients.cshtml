@@ -1,0 +1,572 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Our Clients";
+}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+        --sm-red: #E31E24;
+        --sm-navy: #0B1F3A;
+        --sm-navy-light: #132a4d;
+        --sm-gray: #6b7280;
+        --sm-border: #e5e7eb;
+    }
+
+    .sm-contact-page {
+        font-family: 'Poppins', sans-serif;
+        color: #1f2937;
+        overflow-x: hidden;
+    }
+
+        .sm-contact-page * {
+            box-sizing: border-box;
+        }
+
+    /* ---------- NAV ---------- */
+    .sm-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 60px;
+        background: #fff;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        position: relative;
+        z-index: 20;
+    }
+
+        .sm-nav .sm-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 1.15rem;
+            color: var(--sm-navy);
+        }
+
+            .sm-nav .sm-logo span {
+                color: var(--sm-red);
+            }
+
+    .sm-nav-links {
+        display: flex;
+        gap: 38px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+        .sm-nav-links a {
+            text-decoration: none;
+            color: var(--sm-navy);
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            padding-bottom: 6px;
+            transition: color .3s ease;
+        }
+
+            .sm-nav-links a.active, .sm-nav-links a:hover {
+                color: var(--sm-red);
+            }
+
+                .sm-nav-links a.active::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 2px;
+                    background: var(--sm-red);
+                }
+
+    /* ---------- HERO ---------- */
+    .sm-hero {
+        position: relative;
+        min-height: 420px;
+        display: flex;
+        align-items: center;
+        padding: 0 60px;
+        overflow: hidden;
+    }
+
+    .sm-hero-bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 45%;
+        z-index: 0;
+    }
+
+    .sm-hero-overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background: linear-gradient(100deg, rgba(11,31,58,0.85) 0%, rgba(11,31,58,0.55) 42%, rgba(11,31,58,0.15) 100%);
+        pointer-events: none;
+    }
+
+    .sm-hero::after {
+        content: "";
+        position: absolute;
+        right: -6%;
+        top: 0;
+        bottom: 0;
+        width: 45%;
+        background: linear-gradient(120deg, transparent 46%, rgba(227,30,36,0.5) 47.5%, transparent 49%);
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .sm-hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 600px;
+    }
+
+        .sm-hero-content h1 {
+            color: #fff;
+            font-size: 2.6rem;
+            font-weight: 800;
+            margin: 0 0 14px 0;
+            letter-spacing: .5px;
+            opacity: 0;
+            transform: translateY(24px);
+        }
+
+        .sm-hero-content p {
+            color: #d7deea;
+            font-size: 1.05rem;
+            margin: 0;
+            max-width: 460px;
+            opacity: 0;
+            transform: translateY(24px);
+        }
+
+    .sm-hero.sm-loaded .sm-hero-content h1 {
+        animation: smFadeUp .8s ease forwards .15s;
+    }
+
+    .sm-hero.sm-loaded .sm-hero-content p {
+        animation: smFadeUp .8s ease forwards .4s;
+    }
+
+    @@keyframes smFadeUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+
+    /* ---------- REVEAL ---------- */
+    .sm-reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity .8s ease, transform .8s ease;
+    }
+
+        .sm-reveal.sm-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    .sm-reveal-delay-1.sm-visible {
+        transition-delay: .1s;
+    }
+
+    .sm-reveal-delay-2.sm-visible {
+        transition-delay: .2s;
+    }
+
+    .sm-reveal-delay-3.sm-visible {
+        transition-delay: .3s;
+    }
+
+    .sm-reveal-delay-4.sm-visible {
+        transition-delay: .4s;
+    }
+
+    /* ---------- OUR VALUED CLIENTS ---------- */
+    .sm-clients {
+        padding: 70px 60px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .sm-clients-label {
+        color: var(--sm-red);
+        font-weight: 700;
+        letter-spacing: 2px;
+        font-size: .8rem;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+    }
+
+    .sm-clients h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--sm-navy);
+        margin: 0 0 12px 0;
+    }
+
+    .sm-clients-desc {
+        font-size: .95rem;
+        color: var(--sm-gray);
+        max-width: 640px;
+        line-height: 1.6;
+        margin: 0 0 40px 0;
+    }
+
+    .sm-clients-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 22px;
+    }
+
+    @@media (max-width: 900px) {
+        .sm-clients-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @@media (max-width: 520px) {
+        .sm-clients-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .sm-client-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        border: 1px solid var(--sm-border);
+        border-radius: 10px;
+        padding: 26px 20px;
+        min-height: 110px;
+        transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+    }
+
+        .sm-client-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 28px rgba(11,31,58,0.08);
+            border-color: transparent;
+        }
+
+        .sm-client-card img {
+            max-width: 100%;
+            max-height: 56px;
+            object-fit: contain;
+        }
+
+    /* ---------- PARTNER WITH US ---------- */
+    .sm-partner {
+        margin: 60px auto 70px;
+        max-width: 1200px;
+        padding: 0 60px;
+    }
+
+    .sm-partner-inner {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        min-height: 260px;
+        display: flex;
+        align-items: center;
+        padding: 0 50px;
+        background: var(--sm-navy);
+    }
+
+    .sm-partner-bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        z-index: 0;
+    }
+
+    .sm-partner-overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background: linear-gradient(100deg, rgba(11,31,58,0.92) 0%, rgba(11,31,58,0.75) 45%, rgba(11,31,58,0.55) 100%);
+        pointer-events: none;
+    }
+
+    .sm-partner-inner::after {
+        content: "";
+        position: absolute;
+        right: -6%;
+        top: 0;
+        bottom: 0;
+        width: 45%;
+        background: linear-gradient(120deg, transparent 46%, rgba(227,30,36,0.5) 47.5%, transparent 49%);
+        pointer-events: none;
+        z-index: 2;
+    }
+
+    .sm-partner-content {
+        position: relative;
+        z-index: 3;
+        max-width: 520px;
+    }
+
+        .sm-partner-content h2 {
+            color: #fff;
+            font-size: 1.9rem;
+            font-weight: 800;
+            margin: 0 0 12px 0;
+        }
+
+        .sm-partner-content p {
+            color: #d7deea;
+            font-size: .95rem;
+            line-height: 1.6;
+            margin: 0 0 22px 0;
+        }
+
+    .sm-partner-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--sm-red);
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        padding: 13px 30px;
+        font-weight: 600;
+        font-size: .95rem;
+        text-decoration: none;
+        cursor: pointer;
+        transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+    }
+
+        .sm-partner-btn:hover {
+            background: #c81820;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(227,30,36,0.3);
+        }
+
+        .sm-partner-btn svg {
+            transition: transform .25s ease;
+        }
+
+        .sm-partner-btn:hover svg {
+            transform: translateX(4px);
+        }
+
+    /* ---------- FOOTER ---------- */
+    .sm-footer {
+        background: var(--sm-navy);
+        color: #c9d3e3;
+        padding: 50px 60px 20px;
+    }
+
+    .sm-footer-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr 1fr;
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-bottom: 30px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    @@media (max-width: 800px) {
+        .sm-footer-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .sm-footer-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 800;
+        color: #fff;
+        font-size: 1.05rem;
+        margin-bottom: 14px;
+    }
+
+        .sm-footer-brand span {
+            color: var(--sm-red);
+        }
+
+    .sm-footer p.sm-tagline {
+        font-size: .85rem;
+        line-height: 1.6;
+        color: #9aa7bd;
+        max-width: 280px;
+    }
+
+    .sm-footer h5 {
+        color: #fff;
+        font-size: .9rem;
+        font-weight: 700;
+        margin: 0 0 16px 0;
+        letter-spacing: .5px;
+        text-transform: uppercase;
+    }
+
+    .sm-footer ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+        .sm-footer ul a {
+            color: #9aa7bd;
+            text-decoration: none;
+            font-size: .88rem;
+            transition: color .25s ease;
+        }
+
+            .sm-footer ul a:hover {
+                color: var(--sm-red);
+            }
+
+    .sm-social {
+        display: flex;
+        gap: 12px;
+        margin-top: 16px;
+    }
+
+        .sm-social a {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            transition: background .25s ease, transform .25s ease;
+        }
+
+            .sm-social a:hover {
+                background: var(--sm-red);
+                transform: translateY(-3px);
+            }
+
+    .sm-copyright {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-top: 18px;
+        font-size: .78rem;
+        color: #7f8caa;
+        text-align: center;
+    }
+</style>
+
+<div class="sm-contact-page">
+
+  
+    <!-- HERO -->
+    <section class="sm-hero" id="smHero">
+        <img class="sm-hero-bg" src="~/images/clients-hero-bg.png" alt="" />
+        <div class="sm-hero-overlay"></div>
+        <div class="sm-hero-content">
+            <h1>OUR <span style="color:red">CLIENTS</span></h1>
+            <p>We're proud of the trusted partnerships we've built across the marine and energy industry.</p>
+        </div>
+    </section>
+
+    <!-- OUR VALUED CLIENTS -->
+    <section class="sm-clients">
+        <div class="sm-clients-label sm-reveal">OUR VALUED CLIENTS</div>
+        <h2 class="sm-reveal sm-reveal-delay-1">Our Valued Clients</h2>
+        <p class="sm-clients-desc sm-reveal sm-reveal-delay-1">We are proud to work with a diverse range of clients across various industries. Their trust and partnership drive our commitment to excellence.</p>
+
+        <div class="sm-clients-grid">
+            <div class="sm-client-card sm-reveal sm-reveal-delay-1">
+                <img src="~/images/clients/petronas-carigali.jpg" alt="Petronas Carigali" />
+            </div>
+            <div class="sm-client-card sm-reveal sm-reveal-delay-1">
+                <img src="~/images/clients/totalenergies.png" alt="TotalEnergies" />
+            </div>
+            <div class="sm-client-card sm-reveal sm-reveal-delay-1">
+                <img src="~/images/clients/mubadala-energy.jpg" alt="Mubadala Energy" />
+            </div>
+            <div class="sm-client-card sm-reveal sm-reveal-delay-1">
+                <img src="~/images/clients/posco-malaysia.jpg" alt="POSCO International E&P Malaysia" />
+            </div>
+
+            <div class="sm-client-card sm-reveal sm-reveal-delay-2">
+                <img src="~/images/clients/petrofac.jpg" alt="Petrofac" />
+            </div>
+            <div class="sm-client-card sm-reveal sm-reveal-delay-2">
+                <img src="~/images/clients/mrcsb.jpg" alt="Malaysian Refining Company Sdn Bhd" />
+            </div>
+            <div class="sm-client-card sm-reveal sm-reveal-delay-2">
+                <img src="~/images/clients/ipc-malaysia.jpg" alt="International Petroleum Corp" />
+            </div>
+            <div class="sm-client-card sm-reveal sm-reveal-delay-2">
+                <img src="~/images/clients/vantris-energy.png" alt="Vantris Energy" />
+            </div>
+
+            <div class="sm-client-card sm-reveal sm-reveal-delay-3">
+                <img src="~/images/clients/lumut-port.png" alt="Lumut Port" />
+            </div>
+            <div class="sm-client-card sm-reveal sm-reveal-delay-3">
+                <img src="~/images/clients/uzma.jpg" alt="Uzma" />
+            </div>
+            <div class="sm-client-card sm-reveal sm-reveal-delay-3">
+                <img src="~/images/clients/hgis.png" alt="HGIS" />
+            </div>
+        </div>
+    </section>
+
+    <!-- PARTNER WITH US -->
+    <section class="sm-partner sm-reveal">
+        <div class="sm-partner-inner">
+            <img class="sm-partner-bg" src="~/images/partner-with-us.jpg" alt="" />
+            <div class="sm-partner-overlay"></div>
+            <div class="sm-partner-content">
+                <h2>Partner With Us</h2>
+                <p>We believe in building long-term relationships based on trust, quality and mutual success.</p>
+                <a href="/Home/Contact" class="sm-partner-btn">
+                    LET'S WORK TOGETHER
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M13 5l7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+            (function() {
+                // Hero entrance animation
+                var hero = document.getElementById('smHero');
+                window.requestAnimationFrame(function() {
+                    setTimeout(function() { hero.classList.add('sm-loaded'); }, 50);
+                });
+
+                // Scroll reveal
+                var revealEls = document.querySelectorAll('.sm-reveal');
+                var observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('sm-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+                revealEls.forEach(function(el) { observer.observe(el); });
+            })();
+    </script>

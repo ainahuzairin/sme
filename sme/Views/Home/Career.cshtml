@@ -1,0 +1,586 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Careers";
+}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+        --sm-red: #E31E24;
+        --sm-navy: #0B1F3A;
+        --sm-navy-light: #132a4d;
+        --sm-gray: #6b7280;
+        --sm-border: #e5e7eb;
+    }
+
+    .sm-career-page {
+        font-family: 'Poppins', sans-serif;
+        color: #1f2937;
+        overflow-x: hidden;
+    }
+
+        .sm-career-page * {
+            box-sizing: border-box;
+        }
+
+    /* ---------- HERO ---------- */
+    .sm-hero {
+        position: relative;
+        min-height: 420px;
+        display: flex;
+        align-items: center;
+        padding: 0 60px;
+        overflow: hidden;
+    }
+
+    .sm-hero-bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 45%;
+        z-index: 0;
+    }
+
+    .sm-hero-overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background: linear-gradient(100deg, rgba(11,31,58,0.85) 0%, rgba(11,31,58,0.55) 42%, rgba(11,31,58,0.15) 100%);
+        pointer-events: none;
+    }
+
+    .sm-hero::after {
+        content: "";
+        position: absolute;
+        right: -6%;
+        top: 0;
+        bottom: 0;
+        width: 45%;
+        background: linear-gradient(120deg, transparent 46%, rgba(227,30,36,0.5) 47.5%, transparent 49%);
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    .sm-hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 600px;
+    }
+
+        .sm-hero-content h1 {
+            color: #fff;
+            font-size: 2.6rem;
+            font-weight: 800;
+            margin: 0 0 14px 0;
+            letter-spacing: .5px;
+            opacity: 0;
+            transform: translateY(24px);
+        }
+
+        .sm-hero-content p {
+            color: #d7deea;
+            font-size: 1.05rem;
+            margin: 0;
+            max-width: 460px;
+            opacity: 0;
+            transform: translateY(24px);
+        }
+
+    .sm-hero.sm-loaded .sm-hero-content h1 {
+        animation: smFadeUp .8s ease forwards .15s;
+    }
+
+    .sm-hero.sm-loaded .sm-hero-content p {
+        animation: smFadeUp .8s ease forwards .4s;
+    }
+
+    @@keyframes smFadeUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* ---------- REVEAL ---------- */
+    .sm-reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity .8s ease, transform .8s ease;
+    }
+
+        .sm-reveal.sm-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+    .sm-reveal-delay-1.sm-visible {
+        transition-delay: .1s;
+    }
+
+    .sm-reveal-delay-2.sm-visible {
+        transition-delay: .2s;
+    }
+
+    .sm-reveal-delay-3.sm-visible {
+        transition-delay: .3s;
+    }
+
+    .sm-reveal-delay-4.sm-visible {
+        transition-delay: .4s;
+    }
+
+    /* ---------- WHY JOIN ---------- */
+    .sm-why {
+        padding: 70px 60px 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .sm-why-label {
+        color: var(--sm-red);
+        font-weight: 700;
+        letter-spacing: 2px;
+        font-size: .8rem;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+    }
+
+    .sm-why h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--sm-navy);
+        margin: 0 0 40px 0;
+    }
+
+    .sm-why-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 22px;
+    }
+
+    @@media (max-width: 900px) {
+        .sm-why-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @@media (max-width: 560px) {
+        .sm-why-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .sm-why-card {
+        background: #fff;
+        border: 1px solid var(--sm-border);
+        border-radius: 10px;
+        padding: 26px 22px;
+        transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+    }
+
+        .sm-why-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 28px rgba(11,31,58,0.08);
+            border-color: transparent;
+        }
+
+    .sm-why-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 8px;
+        background: rgba(227,30,36,0.1);
+        color: var(--sm-red);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 16px;
+    }
+
+    .sm-why-card h4 {
+        margin: 0 0 6px 0;
+        font-size: .95rem;
+        font-weight: 700;
+        color: var(--sm-navy);
+    }
+
+    .sm-why-card p {
+        margin: 0;
+        font-size: .85rem;
+        color: var(--sm-gray);
+        line-height: 1.5;
+    }
+
+    /* ---------- CURRENT OPENINGS ---------- */
+    .sm-openings {
+        padding: 40px 60px 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .sm-openings-label {
+        color: var(--sm-red);
+        font-weight: 700;
+        letter-spacing: 2px;
+        font-size: .8rem;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+    }
+
+    .sm-openings h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--sm-navy);
+        margin: 0 0 32px 0;
+    }
+
+    .sm-job-list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .sm-job-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        background: #fff;
+        border: 1px solid var(--sm-border);
+        border-left: 4px solid var(--sm-red);
+        border-radius: 10px;
+        padding: 20px 24px;
+        transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+        .sm-job-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 28px rgba(11,31,58,0.08);
+        }
+
+    .sm-job-info h4 {
+        margin: 0 0 6px 0;
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--sm-navy);
+    }
+
+    .sm-job-info p {
+        margin: 0;
+        font-size: .85rem;
+        color: var(--sm-gray);
+    }
+
+    .sm-apply-btn {
+        flex-shrink: 0;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--sm-red);
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        padding: 11px 22px;
+        font-weight: 600;
+        font-size: .85rem;
+        text-decoration: none;
+        cursor: pointer;
+        transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+        white-space: nowrap;
+    }
+
+        .sm-apply-btn:hover {
+            background: #c81820;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(227,30,36,0.3);
+        }
+
+        .sm-apply-btn svg {
+            transition: transform .25s ease;
+        }
+
+        .sm-apply-btn:hover svg {
+            transform: translateX(4px);
+        }
+
+    @@media (max-width: 620px) {
+        .sm-job-card {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .sm-apply-btn {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    /* ---------- CTA BANNER ---------- */
+    .sm-cta-section {
+        padding: 40px 60px 70px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .sm-cta-banner {
+        position: relative;
+        border-radius: 14px;
+        overflow: hidden;
+        min-height: 220px;
+        display: flex;
+        align-items: center;
+        padding: 40px 50px;
+        box-shadow: 0 20px 40px rgba(11,31,58,0.12);
+    }
+
+    .sm-cta-bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+    }
+
+    .sm-cta-overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background: linear-gradient(100deg, rgba(11,31,58,0.92) 0%, rgba(11,31,58,0.65) 55%, rgba(11,31,58,0.35) 100%);
+    }
+
+    .sm-cta-content {
+        position: relative;
+        z-index: 2;
+        max-width: 520px;
+    }
+
+        .sm-cta-content h3 {
+            color: #fff;
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin: 0 0 10px 0;
+        }
+
+        .sm-cta-content p {
+            color: #d7deea;
+            font-size: .95rem;
+            margin: 0 0 22px 0;
+            line-height: 1.5;
+        }
+
+    .sm-resume-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--sm-red);
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        padding: 13px 28px;
+        font-weight: 600;
+        font-size: .95rem;
+        text-decoration: none;
+        cursor: pointer;
+        transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+    }
+
+        .sm-resume-btn:hover {
+            background: #c81820;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(227,30,36,0.3);
+        }
+
+        .sm-resume-btn svg {
+            transition: transform .25s ease;
+        }
+
+        .sm-resume-btn:hover svg {
+            transform: translateX(4px);
+        }
+</style>
+
+<div class="sm-career-page">
+
+    <!-- HERO -->
+    <!-- HERO -->
+    <section class="sm-hero" id="smHero">
+        <img class="sm-hero-bg" src="~/images/career-hero-bg.png" alt="" />
+        <div class="sm-hero-overlay"></div>
+        <div class="sm-hero-content">
+            <h1>CAREER</h1>
+            <p>Join a team that keeps offshore operations moving safely and reliably around the world.</p>
+        </div>
+    </section>
+
+   
+
+    <!-- WHY JOIN -->
+    <section class="sm-why">
+        <div class="sm-why-label sm-reveal">WHY JOIN SYNERGY MARINE</div>
+        <h2 class="sm-reveal sm-reveal-delay-1">Build your career with an established offshore support vessel company.</h2>
+
+        <div class="sm-why-grid">
+            <div class="sm-why-card sm-reveal sm-reveal-delay-1">
+                <div class="sm-why-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18" /><path d="M7 15l4-4 3 3 5-6" /></svg>
+                </div>
+                <h4>Growth Opportunities</h4>
+                <p>We support your professional growth and development.</p>
+            </div>
+
+            <div class="sm-why-card sm-reveal sm-reveal-delay-2">
+                <div class="sm-why-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="3" /><path d="M2 21v-1a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v1" /><circle cx="17" cy="7" r="2.2" /><path d="M17 12a5 5 0 0 1 5 5v1" /></svg>
+                </div>
+                <h4>Dynamic Team</h4>
+                <p>Work with passionate and experienced professionals.</p>
+            </div>
+
+            <div class="sm-why-card sm-reveal sm-reveal-delay-3">
+                <div class="sm-why-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18z" /></svg>
+                </div>
+                <h4>Global Exposure</h4>
+                <p>Be part of global trade and international business.</p>
+            </div>
+
+            <div class="sm-why-card sm-reveal sm-reveal-delay-4">
+                <div class="sm-why-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.6 5.8L21 9l-4.5 4.4L17.6 20 12 16.8 6.4 20l1.1-6.6L3 9l6.4-1.2z" /></svg>
+                </div>
+                <h4>Rewarding Career</h4>
+                <p>We value your contribution and celebrate success.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CURRENT OPENINGS --> 
+    <section class="sm-openings">
+        <div class="sm-openings-label sm-reveal">CURRENT OPENINGS</div>
+        <h2 class="sm-reveal sm-reveal-delay-1">
+            Explore roles across our offshore and shore-based operations.
+        </h2>
+
+        <div class="sm-no-job sm-reveal sm-reveal-delay-2">
+            <div class="sm-no-job-icon">
+                <i class="fa-regular fa-folder-open"></i>
+            </div>
+
+            <h3>No Current Vacancies</h3>
+
+            <p>
+                We do not have any job openings at the moment.
+                Please check back later for future career opportunities.
+            </p>
+
+            <a href="mailto:trading@smexplorer.com.my" class="sm-resume-btn">
+                SEND YOUR RESUME
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
+            </a>
+        </div>
+    </section>
+
+    @* <!-- CURRENT OPENINGS -->
+    <section class="sm-openings">
+        <div class="sm-openings-label sm-reveal">CURRENT OPENINGS</div>
+        <h2 class="sm-reveal sm-reveal-delay-1">Explore roles across our offshore and shore-based operations.</h2>
+
+        <div class="sm-job-list">
+            <div class="sm-job-card sm-reveal sm-reveal-delay-1">
+                <div class="sm-job-info">
+                    <h4>Marine Operations Executive</h4>
+                    <p>Full-time &middot; Shah Alam, Selangor</p>
+                    <p>Coordinate vessel scheduling, crewing, and day-to-day offshore support operations.</p>
+                </div>
+                <a href="#" class="sm-apply-btn">
+                    APPLY NOW
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
+                </a>
+            </div>
+
+            <div class="sm-job-card sm-reveal sm-reveal-delay-2">
+                <div class="sm-job-info">
+                    <h4>Procurement Executive</h4>
+                    <p>Full-time &middot; Shah Alam, Selangor</p>
+                    <p>Manage vendor sourcing, purchasing activities, and ensure timely delivery of supplies.</p>
+                </div>
+                <a href="#" class="sm-apply-btn">
+                    APPLY NOW
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
+                </a>
+            </div>
+
+            <div class="sm-job-card sm-reveal sm-reveal-delay-3">
+                <div class="sm-job-info">
+                    <h4>HSE Officer</h4>
+                    <p>Full-time &middot; Shah Alam, Selangor</p>
+                    <p>Uphold health, safety and environmental standards across offshore and onshore sites.</p>
+                </div>
+                <a href="#" class="sm-apply-btn">
+                    APPLY NOW
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
+                </a>
+            </div>
+
+            <div class="sm-job-card sm-reveal sm-reveal-delay-4">
+                <div class="sm-job-info">
+                    <h4>Finance Executive</h4>
+                    <p>Full-time &middot; Shah Alam, Selangor</p>
+                    <p>Handle financial transactions, reporting, and ensure compliance with company policies.</p>
+                </div>
+                <a href="#" class="sm-apply-btn">
+                    APPLY NOW
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+ *@
+    <!-- CTA BANNER -->
+   @*  <section class="sm-cta-section">
+        <div class="sm-cta-banner sm-reveal">
+            <img class="sm-cta-bg" src="~/images/career-cta-bg.png" alt="" />
+            <div class="sm-cta-overlay"></div>
+            <div class="sm-cta-content">
+                <h3>Don't see the right role?</h3>
+                <p>We're always looking for talented and motivated individuals. Send us your resume!</p>
+                <a href="mailto:trading@smexplorer.com.my" class="sm-resume-btn">
+                    SEND YOUR RESUME
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
+                </a>
+            </div>
+        </div>
+    </section> *@
+
+    <br /><br />
+    <script>
+            (function() {
+                // Hero entrance animation
+                var hero = document.getElementById('smHero');
+                window.requestAnimationFrame(function() {
+                    setTimeout(function() { hero.classList.add('sm-loaded'); }, 50);
+                });
+
+                // Scroll reveal
+                var revealEls = document.querySelectorAll('.sm-reveal');
+                var observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('sm-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+                revealEls.forEach(function(el) { observer.observe(el); });
+            })();
+    </script>
+</div>
