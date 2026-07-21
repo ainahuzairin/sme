@@ -37,6 +37,8 @@
         box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         position: relative;
         z-index: 20;
+        flex-wrap: wrap;
+        gap: 12px;
     }
 
         .sm-nav .sm-logo {
@@ -58,6 +60,7 @@
         list-style: none;
         margin: 0;
         padding: 0;
+        flex-wrap: wrap;
     }
 
         .sm-nav-links a {
@@ -564,6 +567,274 @@
         color: #7f8caa;
         text-align: center;
     }
+
+    /* =====================================================
+           RESPONSIVE BREAKPOINTS
+           ===================================================== */
+
+    /* ---------- Tablets / small laptops (<=1024px) ---------- */
+    @@media (max-width: 1024px) {
+        .sm-nav {
+            padding: 16px 32px;
+        }
+
+        .sm-nav-links {
+            gap: 24px;
+        }
+
+        .sm-hero {
+            padding: 0 32px;
+            min-height: 380px;
+        }
+
+        .sm-hero-content h1 {
+            font-size: 2.2rem;
+        }
+
+        .sm-hero::after {
+            width: 55%;
+        }
+
+        .sm-stats {
+            padding: 48px 32px 20px;
+        }
+
+        .sm-track {
+            padding: 40px 32px 70px;
+        }
+
+        .sm-footer {
+            padding: 44px 32px 20px;
+        }
+
+        .sm-footer-grid {
+            gap: 28px;
+        }
+    }
+
+    /* ---------- Phones / small tablets (<=768px) ---------- */
+    @@media (max-width: 768px) {
+        .sm-nav {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 16px 24px;
+        }
+
+        .sm-nav-links {
+            width: 100%;
+            gap: 16px 22px;
+            justify-content: flex-start;
+        }
+
+        .sm-hero {
+            padding: 0 24px;
+            min-height: 340px;
+        }
+
+        .sm-hero-content h1 {
+            font-size: 1.8rem;
+        }
+
+        .sm-hero-content p {
+            font-size: .95rem;
+        }
+
+        .sm-hero::after {
+            display: none;
+        }
+
+        .sm-hero-overlay {
+            background: linear-gradient(180deg, rgba(11,31,58,0.9) 0%, rgba(11,31,58,0.75) 60%, rgba(11,31,58,0.55) 100%);
+        }
+
+        .sm-stats {
+            padding: 40px 20px 8px;
+        }
+
+            .sm-stats h2 {
+                font-size: 1.25rem;
+            }
+
+        .sm-track {
+            padding: 32px 20px 56px;
+        }
+
+            .sm-track h2 {
+                font-size: 1.6rem;
+            }
+
+        .sm-track-toolbar {
+            gap: 12px;
+        }
+
+        .sm-search-wrap {
+            min-width: 100%;
+            max-width: 100%;
+        }
+
+        .sm-track-count {
+            width: 100%;
+        }
+        /* ----- Table -> stacked cards, no horizontal scroll ----- */
+        .sm-track-table-wrap {
+            overflow-x: visible;
+            border: none;
+            box-shadow: none;
+            border-radius: 0;
+        }
+
+        table.sm-track-table {
+            min-width: 0;
+            width: 100%;
+        }
+
+            table.sm-track-table thead {
+                display: none;
+            }
+
+            table.sm-track-table, table.sm-track-table tbody, table.sm-track-table tr, table.sm-track-table td {
+                display: block;
+                width: 100%;
+            }
+
+                table.sm-track-table tbody tr {
+                    border: 1px solid var(--sm-border);
+                    border-radius: 12px;
+                    padding: 14px 16px;
+                    margin-bottom: 14px;
+                    box-shadow: 0 10px 24px rgba(11,31,58,0.05);
+                }
+
+                    table.sm-track-table tbody tr:last-child {
+                        margin-bottom: 0;
+                    }
+
+                table.sm-track-table tbody td {
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: space-between;
+                    gap: 14px;
+                    padding: 7px 0;
+                    border-bottom: 1px dashed var(--sm-border);
+                    text-align: right;
+                }
+
+                    table.sm-track-table tbody td:last-child {
+                        border-bottom: none;
+                    }
+
+                    table.sm-track-table tbody td::before {
+                        content: attr(data-label);
+                        flex-shrink: 0;
+                        text-align: left;
+                        font-size: .68rem;
+                        font-weight: 700;
+                        letter-spacing: .5px;
+                        text-transform: uppercase;
+                        color: var(--sm-gray);
+                    }
+
+        .sm-track-num {
+            display: none !important;
+        }
+
+        .sm-track-title {
+            max-width: none;
+            text-align: right;
+        }
+
+        .sm-track-client {
+            text-align: right;
+        }
+    }
+
+    /* ---------- Small phones (<=480px) ---------- */
+    @@media (max-width: 480px) {
+        .sm-nav {
+            padding: 14px 16px;
+        }
+
+        .sm-nav-links {
+            gap: 12px 16px;
+        }
+
+            .sm-nav-links a {
+                font-size: .88rem;
+            }
+
+        .sm-hero {
+            padding: 0 16px;
+            min-height: 300px;
+        }
+
+        .sm-hero-content h1 {
+            font-size: 1.5rem;
+        }
+
+        .sm-hero-content p {
+            font-size: .88rem;
+        }
+
+        .sm-stats {
+            padding: 32px 16px 4px;
+        }
+
+            .sm-stats h2 {
+                font-size: 1.05rem;
+            }
+
+        .sm-stats-desc {
+            font-size: .84rem;
+            margin-bottom: 30px;
+        }
+
+        .sm-track {
+            padding: 28px 16px 44px;
+        }
+
+        .sm-track-label {
+            font-size: .72rem;
+        }
+
+        .sm-track h2 {
+            font-size: 1.35rem;
+        }
+
+        .sm-track-desc {
+            font-size: .86rem;
+        }
+
+        table.sm-track-table tbody tr {
+            padding: 12px 14px;
+        }
+
+        table.sm-track-table tbody td {
+            font-size: .82rem;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 3px;
+        }
+
+            table.sm-track-table tbody td::before {
+                font-size: .64rem;
+            }
+
+        .sm-track-title, .sm-track-client {
+            text-align: left;
+        }
+
+        .sm-footer {
+            padding: 36px 16px 18px;
+        }
+
+        .sm-footer-grid {
+            gap: 30px;
+        }
+
+        .sm-copyright {
+            font-size: .72rem;
+        }
+    }
 </style>
 
 <div class="sm-contact-page">
@@ -691,11 +962,11 @@
                 function renderRows(list) {
                     tbody.innerHTML = list.map(function(p, i) {
                         return '<tr>' +
-                            '<td class="sm-track-num">' + (i + 1) + '</td>' +
-                            '<td class="sm-track-title">' + p.title + '</td>' +
-                            '<td>' + p.period + '</td>' +
-                            '<td>' + statusBadge(p.status) + '</td>' +
-                            '<td class="sm-track-client">' + p.client + '</td>' +
+                            '<td class="sm-track-num" data-label="#">' + (i + 1) + '</td>' +
+                            '<td class="sm-track-title" data-label="Project / Tender Title">' + p.title + '</td>' +
+                            '<td data-label="Period">' + p.period + '</td>' +
+                            '<td data-label="Status">' + statusBadge(p.status) + '</td>' +
+                            '<td class="sm-track-client" data-label="Client">' + p.client + '</td>' +
                             '</tr>';
                     }).join('');
 

@@ -98,8 +98,8 @@ C:\Users\Synergy Marine 12\source\repos\sme\sme\obj\Debug\net10.0\sme.genruntime
 C:\Users\Synergy Marine 12\source\repos\sme\sme\obj\Debug\net10.0\ref\sme.dll
 C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\bin\Debug\net10.0\appsettings.Development.json
 C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\bin\Debug\net10.0\appsettings.json
-C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\bin\Debug\net10.0\sme.staticwebassets.endpoints.json
 C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\bin\Debug\net10.0\sme.staticwebassets.runtime.json
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\bin\Debug\net10.0\sme.staticwebassets.endpoints.json
 C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\bin\Debug\net10.0\sme.exe
 C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\bin\Debug\net10.0\sme.deps.json
 C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\bin\Debug\net10.0\sme.runtimeconfig.json
@@ -120,6 +120,7 @@ C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\obj\Debug\net10.0\rjsmcshtml
 C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\obj\Debug\net10.0\scopedcss\bundle\sme.styles.css
 C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\obj\Debug\net10.0\scopedcss\projectbundle\sme.bundle.scp.css
+C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\obj\Debug\net10.0\compressed\aezpdsp6kc-{0}-l9hvmp492i-l9hvmp492i.gz
 C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\obj\Debug\net10.0\compressed\mau0b2swug-{0}-61n19gt1b8-61n19gt1b8.gz
 C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\obj\Debug\net10.0\compressed\5kkec541kr-{0}-deqk4q3w21-deqk4q3w21.gz
 C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\obj\Debug\net10.0\compressed\xo6jz5xshv-{0}-bqjiyaj88i-bqjiyaj88i.gz
@@ -194,4 +195,3 @@ C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\obj\Debug\net10.0\refint\sme
 C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\obj\Debug\net10.0\sme.pdb
 C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\obj\Debug\net10.0\sme.genruntimeconfig.cache
 C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\obj\Debug\net10.0\ref\sme.dll
-C:\Users\Synergy Marine 12\Documents\GitHub\sme\sme\obj\Debug\net10.0\compressed\aezpdsp6kc-{0}-qjp02ukozr-qjp02ukozr.gz

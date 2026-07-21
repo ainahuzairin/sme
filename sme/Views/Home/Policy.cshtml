@@ -37,6 +37,8 @@
         box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         position: relative;
         z-index: 20;
+        flex-wrap: wrap;
+        gap: 12px;
     }
 
         .sm-nav .sm-logo {
@@ -58,6 +60,7 @@
         list-style: none;
         margin: 0;
         padding: 0;
+        flex-wrap: wrap;
     }
 
         .sm-nav-links a {
@@ -315,12 +318,6 @@
         margin: 22px 0 10px 0;
     }
 
-    @@media (max-width: 700px) {
-        .sm-policy-panel {
-            padding: 30px 26px;
-        }
-    }
-
     /* ---------- FOOTER ---------- */
     .sm-footer {
         background: var(--sm-navy);
@@ -336,12 +333,6 @@
         margin: 0 auto;
         padding-bottom: 30px;
         border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
-    @@media (max-width: 800px) {
-        .sm-footer-grid {
-            grid-template-columns: 1fr;
-        }
     }
 
     .sm-footer-brand {
@@ -425,6 +416,205 @@
         font-size: .78rem;
         color: #7f8caa;
         text-align: center;
+    }
+
+    /* =====================================================
+           RESPONSIVE BREAKPOINTS
+           ===================================================== */
+
+    /* ---------- Tablets / small laptops (<=1024px) ---------- */
+    @@media (max-width: 1024px) {
+        .sm-nav {
+            padding: 16px 32px;
+        }
+
+        .sm-nav-links {
+            gap: 24px;
+        }
+
+        .sm-hero {
+            padding: 0 32px;
+            min-height: 380px;
+        }
+
+        .sm-hero-content h1 {
+            font-size: 2.2rem;
+        }
+
+        .sm-hero::after {
+            width: 55%;
+        }
+
+        .sm-policies {
+            padding: 56px 32px 70px;
+        }
+
+        .sm-policy-panel {
+            padding: 36px 34px;
+        }
+
+        .sm-footer {
+            padding: 44px 32px 20px;
+        }
+
+        .sm-footer-grid {
+            gap: 28px;
+        }
+    }
+
+    /* ---------- Tablets / large phones (<=800px) ---------- */
+    @@media (max-width: 800px) {
+        .sm-footer-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .sm-footer-brand {
+            margin-top: 4px;
+        }
+    }
+
+    /* ---------- Phones (<=700px) ---------- */
+    @@media (max-width: 700px) {
+        .sm-policy-panel {
+            padding: 30px 26px;
+        }
+    }
+
+    /* ---------- Phones (<=768px) ---------- */
+    @@media (max-width: 768px) {
+        .sm-nav {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 16px 24px;
+        }
+
+        .sm-nav-links {
+            width: 100%;
+            gap: 16px 22px;
+            justify-content: flex-start;
+        }
+
+        .sm-hero {
+            padding: 0 24px;
+            min-height: 340px;
+            text-align: left;
+        }
+
+        .sm-hero-content h1 {
+            font-size: 1.8rem;
+        }
+
+        .sm-hero-content p {
+            font-size: .95rem;
+        }
+
+        .sm-hero::after {
+            display: none;
+        }
+
+        .sm-hero-overlay {
+            background: linear-gradient(180deg, rgba(11,31,58,0.9) 0%, rgba(11,31,58,0.75) 60%, rgba(11,31,58,0.55) 100%);
+        }
+
+        .sm-policies {
+            padding: 44px 20px 56px;
+        }
+
+            .sm-policies h2 {
+                font-size: 1.6rem;
+            }
+
+        .sm-policy-tabs {
+            gap: 8px;
+            padding-bottom: 18px;
+            margin-bottom: 24px;
+        }
+
+        .sm-policy-tab {
+            padding: 8px 16px;
+            font-size: .8rem;
+        }
+
+        .sm-policy-panel h3 {
+            font-size: 1.3rem;
+        }
+    }
+
+    /* ---------- Small phones (<=480px) ---------- */
+    @@media (max-width: 480px) {
+        .sm-nav {
+            padding: 14px 16px;
+        }
+
+        .sm-nav-links {
+            gap: 12px 16px;
+        }
+
+            .sm-nav-links a {
+                font-size: .88rem;
+            }
+
+        .sm-hero {
+            padding: 0 16px;
+            min-height: 300px;
+        }
+
+        .sm-hero-content h1 {
+            font-size: 1.5rem;
+        }
+
+        .sm-hero-content p {
+            font-size: .88rem;
+        }
+
+        .sm-policies {
+            padding: 36px 16px 48px;
+        }
+
+        .sm-policies-label {
+            font-size: .72rem;
+        }
+
+        .sm-policies h2 {
+            font-size: 1.35rem;
+        }
+
+        .sm-policies-desc {
+            font-size: .88rem;
+            margin-bottom: 28px;
+        }
+
+        .sm-policy-tab {
+            flex: 1 1 calc(50% - 8px);
+            text-align: center;
+            padding: 8px 10px;
+        }
+
+        .sm-policy-panel {
+            padding: 24px 18px;
+            border-radius: 10px;
+        }
+
+            .sm-policy-panel h3 {
+                font-size: 1.15rem;
+            }
+
+            .sm-policy-panel p {
+                font-size: .88rem;
+                line-height: 1.65;
+            }
+
+        .sm-footer {
+            padding: 36px 16px 18px;
+        }
+
+        .sm-footer-grid {
+            gap: 30px;
+        }
+
+        .sm-copyright {
+            font-size: .72rem;
+        }
     }
 </style>
 

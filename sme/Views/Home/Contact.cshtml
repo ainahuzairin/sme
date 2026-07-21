@@ -476,6 +476,102 @@
         color: #7f8caa;
         text-align: center;
     }
+
+    /* ===================================================================
+           RESPONSIVE / MOBILE
+           =================================================================== */
+
+    @@media (max-width: 992px) {
+        .sm-nav {
+            padding: 16px 32px;
+        }
+
+        .sm-hero {
+            padding: 0 32px;
+            min-height: 360px;
+        }
+
+        .sm-hero-content h1 {
+            font-size: 2.1rem;
+        }
+
+        .sm-touch {
+            padding: 50px 32px 30px;
+        }
+
+        .sm-map-section {
+            padding: 15px 32px 50px;
+        }
+
+        .sm-footer {
+            padding: 40px 32px 20px;
+        }
+    }
+
+    @@media (max-width: 600px) {
+        .sm-nav {
+            padding: 14px 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .sm-nav-links {
+            gap: 18px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .sm-hero {
+            padding: 0 20px;
+            min-height: 280px;
+        }
+
+            .sm-hero::after {
+                display: none; /* diagonal red accent overwhelms narrow screens */
+            }
+
+        .sm-hero-content {
+            max-width: 100%;
+        }
+
+            .sm-hero-content h1 {
+                font-size: 1.6rem;
+            }
+
+            .sm-hero-content p {
+                font-size: 0.95rem;
+            }
+
+        .sm-touch {
+            padding: 40px 20px 20px;
+        }
+
+            .sm-touch h2 {
+                font-size: 1.4rem;
+                margin-bottom: 24px;
+            }
+
+        .sm-form {
+            grid-template-columns: 1fr;
+        }
+
+        .sm-submit-btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .sm-map-section {
+            padding: 10px 20px 40px;
+        }
+
+        .sm-map-wrap iframe {
+            height: 260px;
+        }
+
+        .sm-footer {
+            padding: 32px 20px 16px;
+        }
+    }
 </style>
 
 <div class="sm-contact-page">
@@ -587,25 +683,25 @@
 
    
 
-<script>
-    (function() {
-        // Hero entrance animation
-        var hero = document.getElementById('smHero');
-        window.requestAnimationFrame(function() {
-            setTimeout(function() { hero.classList.add('sm-loaded'); }, 50);
-        });
+    <script>
+            (function() {
+                // Hero entrance animation
+                var hero = document.getElementById('smHero');
+                window.requestAnimationFrame(function() {
+                    setTimeout(function() { hero.classList.add('sm-loaded'); }, 50);
+                });
 
-        // Scroll reveal
-        var revealEls = document.querySelectorAll('.sm-reveal');
-        var observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('sm-visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+                // Scroll reveal
+                var revealEls = document.querySelectorAll('.sm-reveal');
+                var observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('sm-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
 
-        revealEls.forEach(function(el) { observer.observe(el); });
-    })();
-</script>
+                revealEls.forEach(function(el) { observer.observe(el); });
+            })();
+    </script>

@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="~/sme.styles.css" asp-append-version="true" />
 
     <link rel="icon" type="image/png" sizes="32x32" href="~/images/favicon-32.png" />
-  
+
     <style>
             /* White circular plate behind the logo so it reads cleanly on dark backgrounds */
             .sm-logo-badge {
@@ -62,6 +62,118 @@
                 letter-spacing: 0.08em;
                 text-transform: uppercase;
             }
+
+            /* ===================== RESPONSIVE NAV ===================== *
+                         * site.css / sme.styles.css define the base nav look. These   *
+                         * rules make sure the hamburger + dropdown behave correctly   *
+                         * on small screens even if those stylesheets don't already    *
+                         * cover it — safe to remove if duplicated there.              */
+            .sm-navbar__inner {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+
+            .sm-navbar__toggle {
+                display: none;
+                flex-direction: column;
+                justify-content: center;
+                gap: 5px;
+                width: 34px;
+                height: 34px;
+                background: transparent;
+                border: none;
+                cursor: pointer;
+                padding: 0;
+            }
+
+                .sm-navbar__toggle span {
+                    display: block;
+                    width: 100%;
+                    height: 2px;
+                    background: #1c1f24;
+                    border-radius: 2px;
+                }
+
+            .sm-navbar__dropdown {
+                position: relative;
+            }
+
+            /* !important throughout this block: site.css / sme.styles.css likely
+                           already style .sm-dropdown__panel for a desktop hover dropdown
+                           (opacity/visibility/max-height tricks), which can silently block
+                           our JS-driven open state on mobile. These overrides guarantee the
+                           panel actually shows regardless of what those stylesheets do. */
+            .sm-dropdown__panel {
+                display: none !important;
+                visibility: hidden !important;
+                opacity: 0 !important;
+                max-height: 0 !important;
+                overflow: hidden !important;
+                pointer-events: none !important;
+            }
+
+            .sm-navbar__dropdown.sm-open .sm-dropdown__panel {
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                max-height: 1000px !important;
+                overflow: visible !important;
+                pointer-events: auto !important;
+            }
+
+            .sm-dropdown__panel {
+                list-style: none;
+                margin: 0.5rem 0 0;
+                padding: 0;
+            }
+
+                .sm-dropdown__panel li {
+                    padding: 0.45rem 0;
+                }
+
+                .sm-dropdown__panel a {
+                    color: #1c1f24 !important;
+                    text-decoration: none;
+                    font-size: 0.95rem;
+                }
+
+                    .sm-dropdown__panel a:hover {
+                        color: #c81e2c !important;
+                    }
+
+            @@media (max-width: 900px) {
+                .sm-navbar__toggle {
+                    display: flex;
+                }
+
+                .sm-navbar__menu {
+                    display: none;
+                    width: 100%;
+                    order: 3;
+                }
+
+                    .sm-navbar__menu.sm-open {
+                        display: block;
+                    }
+
+                .sm-navbar__links {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    gap: 0;
+                    width: 100%;
+                }
+
+                    .sm-navbar__links > li {
+                        width: 100%;
+                    }
+
+                .sm-dropdown__panel {
+                    position: static !important;
+                    padding-left: 1rem;
+                }
+            }
     </style>
 </head>
 <body>
@@ -82,7 +194,7 @@
                 <div class="sm-navbar__menu" id="smNavMenu">
                     <ul class="sm-navbar__links">
                         <li><a class="sm-navlink is-active" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li class="sm-navbar__dropdown">
+                        <li class="sm-navbar__dropdown" id="smAboutDropdown">
                             <button class="sm-navlink sm-navlink--dropdown" type="button" aria-expanded="false">
                                 About <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" /></svg>
                             </button>
@@ -148,7 +260,7 @@
                     </li>
                     <li>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 6.5 12 13l9-6.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" /><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6" /></svg>
-                     trading@smexplorer.com.my
+                        trading@smexplorer.com.my
                     </li>
                     <li>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v4a2 2 0 0 1-2 2C9.5 21 3 14.5 3 6a2 2 0 0 1 1-2Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" /></svg>
@@ -156,10 +268,11 @@
                     </li>
                 </ul>
                 <div class="sm-footer__social">
-                 @*    <a href="#" aria-label="LinkedIn">in</a>
+                    @*    <a href="#" aria-label="LinkedIn">in</a>
                     <a href="#" aria-label="Facebook">f</a>
                     <a href="#" aria-label="Website"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6" /><path d="M3 12h18M12 3c2.5 2.5 4 5.7 4 9s-1.5 6.5-4 9c-2.5-2.5-4-5.7-4-9s1.5-6.5 4-9Z" stroke="currentColor" stroke-width="1.4" /></svg></a>
-              *@   </div>
+              *@
+                </div>
             </div>
         </div>
         <div class="sm-footer__bottom">
@@ -170,6 +283,33 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script>
+            (function() {
+                // Hamburger toggle for mobile nav
+                var toggle = document.getElementById('smNavToggle');
+                var menu = document.getElementById('smNavMenu');
+                if (toggle && menu) {
+                    toggle.addEventListener('click', function() {
+                        var isOpen = menu.classList.toggle('sm-open');
+                        toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    });
+                }
+
+                // "About" dropdown toggle (tap to open on mobile, since there's no hover)
+                var aboutDropdown = document.getElementById('smAboutDropdown');
+                if (aboutDropdown) {
+                    var aboutBtn = aboutDropdown.querySelector('.sm-navlink--dropdown');
+                    if (aboutBtn) {
+                        aboutBtn.addEventListener('click', function() {
+                            var isOpen = aboutDropdown.classList.toggle('sm-open');
+                            aboutBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                        });
+                    }
+                }
+            })();
+    </script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

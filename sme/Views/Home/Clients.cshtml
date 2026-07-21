@@ -470,6 +470,141 @@
         color: #7f8caa;
         text-align: center;
     }
+
+    /* ===================================================================
+           RESPONSIVE / MOBILE
+           Goal: shrink spacing/type on small screens so the page reads as a
+           compact mobile layout rather than a squeezed desktop one — less
+           vertical distance = less scrolling.
+           =================================================================== */
+
+    @@media (max-width: 992px) {
+        .sm-nav {
+            padding: 16px 32px;
+        }
+
+        .sm-hero {
+            padding: 0 32px;
+            min-height: 340px;
+        }
+
+        .sm-hero-content h1 {
+            font-size: 2.1rem;
+        }
+
+        .sm-clients {
+            padding: 50px 32px 10px;
+        }
+
+        .sm-partner {
+            padding: 0 32px;
+            margin: 40px auto 50px;
+        }
+
+        .sm-footer {
+            padding: 40px 32px 20px;
+        }
+    }
+
+    @@media (max-width: 600px) {
+        .sm-nav {
+            padding: 14px 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .sm-nav-links {
+            gap: 18px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .sm-hero {
+            padding: 0 20px;
+            min-height: 240px;
+        }
+
+            .sm-hero::after {
+                display: none; /* diagonal red accent overwhelms narrow screens */
+            }
+
+        .sm-hero-content {
+            max-width: 100%;
+        }
+
+            .sm-hero-content h1 {
+                font-size: 1.5rem;
+                margin-bottom: 8px;
+            }
+
+            .sm-hero-content p {
+                font-size: 0.9rem;
+            }
+
+        .sm-clients {
+            padding: 32px 20px 8px;
+        }
+
+            .sm-clients h2 {
+                font-size: 1.4rem;
+                margin-bottom: 8px;
+            }
+
+        .sm-clients-desc {
+            font-size: 0.88rem;
+            margin-bottom: 22px;
+        }
+
+        .sm-clients-grid {
+            gap: 12px;
+        }
+
+        .sm-client-card {
+            padding: 16px 12px;
+            min-height: 80px;
+        }
+
+            .sm-client-card img {
+                max-height: 40px;
+            }
+
+        .sm-partner {
+            padding: 0 20px;
+            margin: 28px auto 32px;
+        }
+
+        .sm-partner-inner {
+            padding: 28px 24px;
+            min-height: unset;
+        }
+
+            .sm-partner-inner::after {
+                display: none;
+            }
+
+        .sm-partner-content {
+            max-width: 100%;
+        }
+
+            .sm-partner-content h2 {
+                font-size: 1.4rem;
+            }
+
+            .sm-partner-content p {
+                font-size: 0.88rem;
+                margin-bottom: 16px;
+            }
+
+        .sm-partner-btn {
+            width: 100%;
+            justify-content: center;
+            padding: 12px 20px;
+        }
+
+        .sm-footer {
+            padding: 28px 20px 14px;
+        }
+    }
 </style>
 
 <div class="sm-contact-page">
@@ -570,3 +705,4 @@
                 revealEls.forEach(function(el) { observer.observe(el); });
             })();
     </script>
+</div>

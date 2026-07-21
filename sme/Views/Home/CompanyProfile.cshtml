@@ -1,8 +1,89 @@
-﻿@{
-    ViewData["Title"] = "About Us";
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Company Profile";
 }
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
+    :root {
+        --sm-red: #E31E24;
+        --sm-navy: #0B1F3A;
+        --sm-navy-light: #132a4d;
+        --sm-gray: #6b7280;
+        --sm-border: #e5e7eb;
+    }
+
+    .sm-contact-page {
+        font-family: 'Poppins', sans-serif;
+        color: #1f2937;
+        overflow-x: hidden;
+    }
+
+        .sm-contact-page * {
+            box-sizing: border-box;
+        }
+
+    /* ---------- NAV ---------- */
+    .sm-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 18px 60px;
+        background: #fff;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        position: relative;
+        z-index: 20;
+    }
+
+        .sm-nav .sm-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 1.15rem;
+            color: var(--sm-navy);
+        }
+
+            .sm-nav .sm-logo span {
+                color: var(--sm-red);
+            }
+
+    .sm-nav-links {
+        display: flex;
+        gap: 38px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+        .sm-nav-links a {
+            text-decoration: none;
+            color: var(--sm-navy);
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            padding-bottom: 6px;
+            transition: color .3s ease;
+        }
+
+            .sm-nav-links a.active, .sm-nav-links a:hover {
+                color: var(--sm-red);
+            }
+
+                .sm-nav-links a.active::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 2px;
+                    background: var(--sm-red);
+                }
+
     /* ---------- HERO ---------- */
     .sm-hero {
         position: relative;
@@ -111,526 +192,638 @@
     .sm-reveal-delay-4.sm-visible {
         transition-delay: .4s;
     }
-</style>
 
-<!-- HERO -->
-<section class="sm-hero" id="smHero">
-    <img class="sm-hero-bg" src="~/images/cp-hero-bg.png" alt="" />
-    <div class="sm-hero-overlay"></div>
-    <div class="sm-hero-content">
-        <h1>COMPANY <span style="color:red">PROFILE</span></h1>
-        <p>SM Explorer Sdn Bhd is a Malaysia-registered trading company specialising 
-            in offshore and onshore equipment and maintenance solutions for the oil, gas, and engineering sectors.</p>
-    </div>
-</section>
-
-<!-- ================= WHO WE ARE (Hero split section) ================= -->
-<section class="sm-about-hero sm-reveal">
-    <div class="sm-about-hero-inner">
-
-        <!-- Left: photo + heading + copy -->
-        <div class="sm-about-hero-left">
-            <div class="sm-about-hero-photo">
-                <img src="~/images/companyprofile-hero-bg.png" alt="SM Explorer offshore &amp; onshore trading" />
-            </div>
-
-            <div class="sm-about-hero-copy">
-                <span class="sm-eyebrow">About Us</span>
-                <h1>Who We Are</h1>
-                <p>
-                    SM Explorer Sdn Bhd is a registered company under the Companies Commission of
-                    Malaysia (SSM) and the Ministry of Finance, specialised in trading for offshore
-                    and onshore equipment and maintenance.
-                </p>
-                <p>
-                    We are fully committed to delivering superior quality products and services that
-                    meet international standards, while remaining accessible and cost-effective for
-                    all our clients across Malaysia's oil, gas, and engineering sectors.
-                </p>
-
-                <ul class="sm-about-hero-points">
-                    <li>Registered under SSM &amp; Ministry of Finance</li>
-                    <li>Specialised in offshore &amp; onshore trading</li>
-                    <li>Meeting international standards</li>
-                </ul>
-
-                <a href="/Home/Contact" class="sm-about-hero-btn">GET IN TOUCH</a>
-            </div>
-        </div>
-
-        <!-- Right: Vision / Mission / Values summary cards -->
-        <div class="sm-about-hero-right">
-            <div class="sm-vmv-card sm-reveal sm-reveal-delay-1">
-                <div class="sm-vmv-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" />
-                        <circle cx="12" cy="12" r="3" />
-                    </svg>
-                </div>
-                <div class="sm-vmv-text">
-                    <h3>Our Vision</h3>
-                    <p>To be a trusted global trading partner creating sustainable value and growth.</p>
-                </div>
-            </div>
-
-            <div class="sm-vmv-card sm-reveal sm-reveal-delay-2">
-                <div class="sm-vmv-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 2 3 6v6c0 5 4 9 9 10 5-1 9-5 9-10V6l-9-4Z" />
-                    </svg>
-                </div>
-                <div class="sm-vmv-text">
-                    <h3>Our Mission</h3>
-                    <p>To deliver quality products and exceptional service through trust, teamwork and innovation.</p>
-                </div>
-            </div>
-
-            <div class="sm-vmv-card sm-reveal sm-reveal-delay-3">
-                <div class="sm-vmv-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="m12 3 2.6 5.4 6 .8-4.3 4.2 1 6-5.3-2.8L6.7 19.4l1-6-4.3-4.2 6-.8L12 3Z" />
-                    </svg>
-                </div>
-                <div class="sm-vmv-text">
-                    <h3>Our Values</h3>
-                    <p>Integrity, Excellence, Reliability, Teamwork and Customer Focus.</p>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<!-- ================= OUR MISSION (full section) ================= -->
-<section class="sm-mission sm-reveal">
-    <div class="sm-mission-inner">
-        <span class="sm-eyebrow">Our Mission</span>
-        <h2>What We Strive For</h2>
-        <p>
-            The company aims to establish a new model for how service providers deliver superior
-            quality service and equipment that meet international standards at a reasonable cost.
-        </p>
-        <p>
-            We wish to expand all our clients' capacity to utilise the latest technology, combining
-            a reliable online portal to source products, services and equipment available for their
-            requirements — all at a reasonable and transparent cost.
-        </p>
-
-        <ul class="sm-mission-points">
-            <li>New standard in service delivery</li>
-            <li>Reliable online portal for sourcing</li>
-            <li>Reasonable cost for all clients</li>
-        </ul>
-    </div>
-</section>
-
-<!-- ================= OUR CORE VALUES ================= -->
-<section class="sm-values sm-reveal">
-    <div class="sm-values-inner">
-        <span class="sm-eyebrow">What Drives Us</span>
-        <h2>Our Core Values</h2>
-
-        <div class="sm-values-grid">
-            <div class="sm-value-card sm-reveal sm-reveal-delay-1">
-                <div class="sm-value-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 2 3 6v6c0 5 4 9 9 10 5-1 9-5 9-10V6l-9-4Z" />
-                    </svg>
-                </div>
-                <h3>Reliable</h3>
-                <p>Meet international standards to operate in harsh environments, onshore and offshore.</p>
-            </div>
-
-            <div class="sm-value-card sm-reveal sm-reveal-delay-2">
-                <div class="sm-value-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M13 2 3 14h7l-1 8 11-14h-7l0-6Z" />
-                    </svg>
-                </div>
-                <h3>Fast</h3>
-                <p>Our team provides fast and immediate response 24/7 to support our clients whenever needed.</p>
-            </div>
-
-            <div class="sm-value-card sm-reveal sm-reveal-delay-3">
-                <div class="sm-value-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="m9 12 2 2 4-4" />
-                        <circle cx="12" cy="12" r="9" />
-                    </svg>
-                </div>
-                <h3>Commitment</h3>
-                <p>"Our commitment is our promise." We honour every obligation to our clients, partners and stakeholders.</p>
-            </div>
-
-            <div class="sm-value-card sm-reveal sm-reveal-delay-1">
-                <div class="sm-value-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z" />
-                    </svg>
-                </div>
-                <h3>Safe</h3>
-                <p>All our products and services meet the required HSE standards across every industry we serve.</p>
-            </div>
-
-            <div class="sm-value-card sm-reveal sm-reveal-delay-2">
-                <div class="sm-value-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="9" />
-                        <path d="M12 7v5l3 3" />
-                    </svg>
-                </div>
-                <h3>Reasonable</h3>
-                <p>All our products and services are offered at a reasonable and transparent cost without compromise.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<style>
-    :root {
-        --sm-navy: #0b1f3a;
-        --sm-navy-dark: #071527;
-        --sm-red: #c81e2c;
-        --sm-red-dark: #a5161f;
-        --sm-ink: #1c2833;
-        --sm-muted: #5a6b7d;
-        --sm-line: #e6eaf0;
-        --sm-bg-soft: #f6f8fb;
-    }
-
-    .sm-eyebrow {
-        display: inline-block;
-        font-size: 0.8rem;
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
+    /* ---------- SECTION LABEL / HEADING (shared) ---------- */
+    .sm-label {
         color: var(--sm-red);
-        margin-bottom: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        font-size: .8rem;
+        text-transform: uppercase;
+        margin-bottom: 8px;
     }
 
-    /* ---- Who We Are hero ---- */
-    .sm-about-hero {
-        padding: 5rem 1.5rem;
-        background: #fff;
-    }
-
-    .sm-about-hero-inner {
+    /* ---------- WHO WE ARE (intro block) ---------- */
+    .sm-who {
+        padding: 70px 60px;
         max-width: 1200px;
         margin: 0 auto;
+    }
+
+    .sm-who-grid {
         display: grid;
-        grid-template-columns: 1.4fr 1fr;
-        gap: 3rem;
-        align-items: stretch;
+        grid-template-columns: 0.95fr 1fr 0.85fr;
+        gap: 40px;
+        align-items: center;
     }
 
-    .sm-about-hero-left {
-        position: relative;
-        border-radius: 14px;
-        overflow: hidden;
-        background: var(--sm-navy);
-        min-height: 460px;
-        display: flex;
-        align-items: flex-end;
+    @@media (max-width: 1000px) {
+        .sm-who-grid {
+            grid-template-columns: 1fr;
+        }
     }
 
-    .sm-about-hero-photo {
-        position: absolute;
-        inset: 0;
+    .sm-who-text h2 {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: var(--sm-navy);
+        margin: 0 0 16px 0;
+        line-height: 1.3;
     }
 
-        .sm-about-hero-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.55;
-        }
-
-        .sm-about-hero-photo::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(11,31,58,0.15) 0%, rgba(11,31,58,0.92) 85%);
-        }
-
-    .sm-about-hero-copy {
-        position: relative;
-        z-index: 1;
-        padding: 2.5rem;
-        color: #fff;
+    .sm-who-text p {
+        font-size: .92rem;
+        color: var(--sm-gray);
+        line-height: 1.7;
+        margin: 0 0 26px 0;
     }
 
-        .sm-about-hero-copy h1 {
-            font-size: 2.1rem;
-            font-weight: 800;
-            margin: 0 0 1rem;
-            color: #fff;
-        }
-
-        .sm-about-hero-copy p {
-            color: #d6dee8;
-            line-height: 1.7;
-            margin: 0 0 1rem;
-            max-width: 46ch;
-        }
-
-    .sm-about-hero-points {
-        list-style: none;
-        margin: 1.25rem 0 1.75rem;
-        padding: 0;
-    }
-
-        .sm-about-hero-points li {
-            position: relative;
-            padding-left: 1.4rem;
-            margin-bottom: 0.5rem;
-            color: #eef2f7;
-            font-weight: 500;
-        }
-
-            .sm-about-hero-points li::before {
-                content: "";
-                position: absolute;
-                left: 0;
-                top: 0.55rem;
-                width: 8px;
-                height: 8px;
-                border-radius: 50%;
-                background: var(--sm-red);
-            }
-
-    .sm-about-hero-btn {
-        display: inline-block;
+    .sm-who-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
         background: var(--sm-red);
         color: #fff;
-        font-weight: 700;
-        font-size: 0.85rem;
-        letter-spacing: 0.06em;
-        padding: 0.85rem 1.75rem;
+        border: none;
         border-radius: 6px;
+        padding: 13px 26px;
+        font-weight: 600;
+        font-size: .85rem;
+        letter-spacing: .5px;
         text-decoration: none;
-        transition: background 0.2s ease;
+        cursor: pointer;
+        transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
     }
 
-        .sm-about-hero-btn:hover {
-            background: var(--sm-red-dark);
+        .sm-who-btn:hover {
+            background: #c81820;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(227,30,36,0.3);
         }
 
-    /* ---- Vision / Mission / Values summary cards ---- */
-    .sm-about-hero-right {
+        .sm-who-btn svg {
+            transition: transform .25s ease;
+        }
+
+        .sm-who-btn:hover svg {
+            transform: translateX(4px);
+        }
+
+    .sm-who-img {
+        width: 100%;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px rgba(11,31,58,0.1);
+    }
+
+        .sm-who-img img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+        }
+
+    .sm-who-cards {
         display: flex;
         flex-direction: column;
-        gap: 1.25rem;
-        justify-content: center;
+        gap: 16px;
     }
 
-    .sm-vmv-card {
+    .sm-who-card {
         display: flex;
-        gap: 1rem;
         align-items: flex-start;
-        background: var(--sm-bg-soft);
-        border: 1px solid var(--sm-line);
-        border-radius: 12px;
-        padding: 1.5rem;
+        gap: 14px;
+        background: #fff;
+        border: 1px solid var(--sm-border);
+        border-left: 3px solid var(--sm-red);
+        border-radius: 8px;
+        padding: 16px 18px;
+        transition: transform .3s ease, box-shadow .3s ease;
     }
 
-    .sm-vmv-icon {
-        flex: none;
-        width: 44px;
-        height: 44px;
-        border-radius: 10px;
-        background: var(--sm-navy);
-        color: #fff;
+        .sm-who-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(11,31,58,0.08);
+        }
+
+    .sm-who-card-icon {
+        flex-shrink: 0;
+        width: 38px;
+        height: 38px;
+        border-radius: 8px;
+        background: rgba(227,30,36,0.08);
+        color: var(--sm-red);
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
-    .sm-vmv-text h3 {
-        margin: 0 0 0.35rem;
-        font-size: 1rem;
+    .sm-who-card h5 {
+        margin: 0 0 4px 0;
+        font-size: .82rem;
         font-weight: 700;
         color: var(--sm-navy);
+        text-transform: uppercase;
+        letter-spacing: .4px;
     }
 
-    .sm-vmv-text p {
+    .sm-who-card p {
         margin: 0;
-        font-size: 0.9rem;
-        line-height: 1.55;
-        color: var(--sm-muted);
+        font-size: .8rem;
+        color: var(--sm-gray);
+        line-height: 1.5;
     }
 
-    /* ---- Our Mission section ---- */
-    .sm-mission {
-        padding: 5rem 1.5rem;
-        background: var(--sm-bg-soft);
-    }
-
-    .sm-mission-inner {
-        max-width: 780px;
+    /* ---------- VISION / MISSION (alternating detail sections) ---------- */
+    .sm-detail {
+        padding: 50px 60px;
+        max-width: 1200px;
         margin: 0 auto;
-        text-align: center;
     }
 
-        .sm-mission-inner h2 {
-            font-size: 1.9rem;
-            font-weight: 800;
-            color: var(--sm-navy);
-            margin: 0 0 1.25rem;
+    .sm-detail-grid {
+        display: grid;
+        grid-template-columns: 1fr 0.7fr;
+        gap: 60px;
+        align-items: center;
+    }
+
+    .sm-detail-grid.sm-reverse {
+        grid-template-columns: 0.7fr 1fr;
+    }
+
+        .sm-detail-grid.sm-reverse .sm-detail-visual {
+            order: -1;
         }
 
-        .sm-mission-inner p {
-            color: var(--sm-muted);
-            line-height: 1.75;
-            margin: 0 0 1rem;
+    @@media (max-width: 900px) {
+        .sm-detail-grid, .sm-detail-grid.sm-reverse {
+            grid-template-columns: 1fr;
         }
 
-    .sm-mission-points {
+            .sm-detail-grid.sm-reverse .sm-detail-visual {
+                order: 0;
+            }
+    }
+
+    .sm-detail h2 {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: var(--sm-navy);
+        margin: 0 0 16px 0;
+    }
+
+    .sm-detail p {
+        font-size: .92rem;
+        color: var(--sm-gray);
+        line-height: 1.75;
+        margin: 0 0 16px 0;
+    }
+
+    .sm-detail-checklist {
         list-style: none;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.75rem 1.5rem;
-        margin: 1.75rem 0 0;
+        margin: 22px 0 0 0;
         padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
     }
 
-        .sm-mission-points li {
-            position: relative;
-            padding-left: 1.4rem;
+        .sm-detail-checklist li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: .88rem;
             font-weight: 600;
             color: var(--sm-navy);
         }
 
-            .sm-mission-points li::before {
-                content: "";
-                position: absolute;
-                left: 0;
-                top: 0.5rem;
-                width: 8px;
-                height: 8px;
-                border-radius: 50%;
-                background: var(--sm-red);
-            }
-
-    /* ---- Core Values section ---- */
-    .sm-values {
-        padding: 5rem 1.5rem;
-        background: #fff;
+    .sm-check-icon {
+        flex-shrink: 0;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background: rgba(227,30,36,0.1);
+        color: var(--sm-red);
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    .sm-values-inner {
+    .sm-detail-visual {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sm-detail-visual-panel {
+        width: 100%;
+        min-height: 260px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, var(--sm-navy) 0%, var(--sm-navy-light) 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+        .sm-detail-visual-panel::after {
+            content: "";
+            position: absolute;
+            right: -10%;
+            top: 0;
+            bottom: 0;
+            width: 55%;
+            background: linear-gradient(120deg, transparent 46%, rgba(227,30,36,0.45) 47.5%, transparent 49%);
+        }
+
+        .sm-detail-visual-panel svg {
+            position: relative;
+            z-index: 1;
+            color: rgba(255,255,255,0.9);
+        }
+
+    /* ---------- CORE VALUES ---------- */
+    .sm-values {
+        padding: 60px 60px 90px;
         max-width: 1200px;
         margin: 0 auto;
-        text-align: center;
     }
 
-        .sm-values-inner h2 {
-            font-size: 1.9rem;
-            font-weight: 800;
-            color: var(--sm-navy);
-            margin: 0 0 2.5rem;
-        }
+    .sm-values h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--sm-navy);
+        margin: 0 0 40px 0;
+    }
 
     .sm-values-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-        gap: 1.5rem;
-        text-align: left;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+    }
+
+    @@media (max-width: 1000px) {
+        .sm-values-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @@media (max-width: 620px) {
+        .sm-values-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 
     .sm-value-card {
-        border: 1px solid var(--sm-line);
+        background: #fff;
+        border: 1px solid var(--sm-border);
         border-radius: 12px;
-        padding: 1.75rem 1.5rem;
-        transition: box-shadow 0.2s ease, transform 0.2s ease;
+        padding: 26px 20px;
+        text-align: left;
+        transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
     }
 
         .sm-value-card:hover {
-            box-shadow: 0 12px 28px rgba(11,31,58,0.10);
-            transform: translateY(-3px);
+            transform: translateY(-5px);
+            box-shadow: 0 16px 30px rgba(11,31,58,0.1);
+            border-color: transparent;
         }
 
     .sm-value-icon {
         width: 46px;
         height: 46px;
         border-radius: 10px;
-        background: var(--sm-navy);
-        color: #fff;
+        background: rgba(227,30,36,0.1);
+        color: var(--sm-red);
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 1rem;
+        margin-bottom: 16px;
     }
 
-    .sm-value-card h3 {
-        margin: 0 0 0.5rem;
-        font-size: 1.05rem;
-        font-weight: 700;
+    .sm-value-card h4 {
+        font-size: 1rem;
+        font-weight: 800;
         color: var(--sm-navy);
+        margin: 0 0 10px 0;
     }
 
     .sm-value-card p {
-        margin: 0;
-        font-size: 0.9rem;
+        font-size: .82rem;
+        color: var(--sm-gray);
         line-height: 1.6;
-        color: var(--sm-muted);
+        margin: 0;
     }
 
-    /* ---- Scroll reveal (shared pattern) ---- */
-    .sm-reveal {
-        opacity: 0;
-        transform: translateY(24px);
-        transition: opacity 0.6s ease, transform 0.6s ease;
+    /* ---------- FOOTER ---------- */
+    .sm-footer {
+        background: var(--sm-navy);
+        color: #c9d3e3;
+        padding: 50px 60px 20px;
     }
 
-        .sm-reveal.sm-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-    .sm-reveal-delay-1.sm-visible {
-        transition-delay: 0.05s;
+    .sm-footer-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr 1fr;
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-bottom: 30px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
-    .sm-reveal-delay-2.sm-visible {
-        transition-delay: 0.15s;
-    }
-
-    .sm-reveal-delay-3.sm-visible {
-        transition-delay: 0.25s;
-    }
-
-    @@media (max-width: 900px) {
-        .sm-about-hero-inner {
+    @@media (max-width: 800px) {
+        .sm-footer-grid {
             grid-template-columns: 1fr;
         }
+    }
 
-        .sm-about-hero-left {
-            min-height: 380px;
+    .sm-footer-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 800;
+        color: #fff;
+        font-size: 1.05rem;
+        margin-bottom: 14px;
+    }
+
+        .sm-footer-brand span {
+            color: var(--sm-red);
         }
+
+    .sm-footer p.sm-tagline {
+        font-size: .85rem;
+        line-height: 1.6;
+        color: #9aa7bd;
+        max-width: 280px;
+    }
+
+    .sm-footer h5 {
+        color: #fff;
+        font-size: .9rem;
+        font-weight: 700;
+        margin: 0 0 16px 0;
+        letter-spacing: .5px;
+        text-transform: uppercase;
+    }
+
+    .sm-footer ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+        .sm-footer ul a {
+            color: #9aa7bd;
+            text-decoration: none;
+            font-size: .88rem;
+            transition: color .25s ease;
+        }
+
+            .sm-footer ul a:hover {
+                color: var(--sm-red);
+            }
+
+    .sm-social {
+        display: flex;
+        gap: 12px;
+        margin-top: 16px;
+    }
+
+        .sm-social a {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            transition: background .25s ease, transform .25s ease;
+        }
+
+            .sm-social a:hover {
+                background: var(--sm-red);
+                transform: translateY(-3px);
+            }
+
+    .sm-copyright {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-top: 18px;
+        font-size: .78rem;
+        color: #7f8caa;
+        text-align: center;
     }
 </style>
 
-<script>
-    (function() {
-        // Hero entrance animation — fade/slide in the title & paragraph
-        var hero = document.getElementById('smHero');
-        if (hero) {
-            window.requestAnimationFrame(function() {
-                setTimeout(function() { hero.classList.add('sm-loaded'); }, 50);
-            });
-        }
+<div class="sm-contact-page">
 
-        // Scroll reveal
-        var revealEls = document.querySelectorAll('.sm-reveal');
-        var observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('sm-visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
-        revealEls.forEach(function(el) { observer.observe(el); });
-    })();
-</script>
+    <!-- HERO -->
+    <section class="sm-hero" id="smHero">
+        <img class="sm-hero-bg" src="~/images/cp-hero-bg.png" alt="" />
+        <div class="sm-hero-overlay"></div>
+        <div class="sm-hero-content">
+            <h1>COMPANY <span style="color:red">PROFILE</span></h1>
+            <p>A registered trading company specialised in offshore and onshore equipment and maintenance, built on reliability, safety and integrity.</p>
+        </div>
+    </section>
+
+    <!-- WHO WE ARE (intro block) -->
+    <section class="sm-who">
+        <div class="sm-label sm-reveal">ABOUT US</div>
+        <div class="sm-who-grid">
+            <div class="sm-who-text sm-reveal sm-reveal-delay-1">
+                <h2>Who We Are &amp; What We Stand For</h2>
+                <p>A registered company under the Company Commission of Malaysia (SSM) and Ministry of Finance, specialised in trading for offshore and onshore equipment and maintenance.</p>
+                <a href="/Home/Contact" class="sm-who-btn">
+                    GET IN TOUCH
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M13 5l7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+
+            <div class="sm-who-img sm-reveal sm-reveal-delay-2">
+                <img src="~/images/companyprofile-hero-bg.png" alt="SM Explorer offshore and port operations" />
+            </div>
+
+            <div class="sm-who-cards sm-reveal sm-reveal-delay-3">
+                <div class="sm-who-card">
+                    <div class="sm-who-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" /><circle cx="12" cy="12" r="3" /></svg>
+                    </div>
+                    <div>
+                        <h5>Our Vision</h5>
+                        <p>To be a trusted global trading partner creating sustainable value and growth.</p>
+                    </div>
+                </div>
+
+                <div class="sm-who-card">
+                    <div class="sm-who-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 7v6c0 5 4 9 9 9s9-4 9-9V7l-9-5z" /><path d="m9 12 2 2 4-4" /></svg>
+                    </div>
+                    <div>
+                        <h5>Our Mission</h5>
+                        <p>To deliver quality products and exceptional service through trust, teamwork and innovation.</p>
+                    </div>
+                </div>
+
+                <div class="sm-who-card">
+                    <div class="sm-who-card-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.5-9-9c-1.4-3 .5-7 4-7 2 0 3.5 1 5 3 1.5-2 3-3 5-3 3.5 0 5.4 4 4 7-2 4.5-9 9-9 9z" /></svg>
+                    </div>
+                    <div>
+                        <h5>Our Values</h5>
+                        <p>Integrity, Excellence, Reliability, Teamwork and Customer Focus.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR VISION (detail) -->
+    <section class="sm-detail">
+        <div class="sm-detail-grid">
+            <div class="sm-detail-text sm-reveal">
+                <div class="sm-label">OUR VISION</div>
+                <h2>Who We Are</h2>
+                <p>SM Explorer Sdn Bhd is a registered company under the Company Commission of Malaysia (SSM) and the Ministry of Finance, specialised in trading for offshore and onshore equipment and maintenance.</p>
+                <p>We are fully committed to delivering superior quality products and services that meet international standards, while remaining accessible and cost-effective for all our clients across Malaysia's oil, gas, and engineering sectors.</p>
+
+                <ul class="sm-detail-checklist">
+                    <li>
+                        <span class="sm-check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L19 7" /></svg></span>
+                        Registered under SSM &amp; Ministry of Finance
+                    </li>
+                    <li>
+                        <span class="sm-check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L19 7" /></svg></span>
+                        Specialised in offshore &amp; onshore trading
+                    </li>
+                    <li>
+                        <span class="sm-check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L19 7" /></svg></span>
+                        Meeting international standards
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sm-detail-visual sm-reveal sm-reveal-delay-1">
+                <div class="sm-detail-visual-panel">
+                    <svg width="90" height="90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" /><circle cx="12" cy="12" r="3.2" /></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR MISSION (detail, reversed) -->
+    <section class="sm-detail">
+        <div class="sm-detail-grid sm-reverse">
+            <div class="sm-detail-visual sm-reveal sm-reveal-delay-1">
+                <div class="sm-detail-visual-panel">
+                    <svg width="90" height="90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2 3 7v6c0 5 4 9 9 9s9-4 9-9V7l-9-5z" /><path d="m9 12 2 2 4-4" /></svg>
+                </div>
+            </div>
+
+            <div class="sm-detail-text sm-reveal">
+                <div class="sm-label">OUR MISSION</div>
+                <h2>What We Strive For</h2>
+                <p>The company aims to establish a new model for how service providers deliver superior quality service and equipment that meet international standards at a reasonable cost.</p>
+                <p>We wish to expand all our clients' capacity to utilise the latest technology, combining a reliable online portal to source products, services and equipment available for their requirements — all at a reasonable and transparent cost.</p>
+
+                <ul class="sm-detail-checklist">
+                    <li>
+                        <span class="sm-check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L19 7" /></svg></span>
+                        New standard in service delivery
+                    </li>
+                    <li>
+                        <span class="sm-check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L19 7" /></svg></span>
+                        Reliable online portal for sourcing
+                    </li>
+                    <li>
+                        <span class="sm-check-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L19 7" /></svg></span>
+                        Reasonable cost for all clients
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE VALUES -->
+    <section class="sm-values">
+        <div class="sm-label sm-reveal">WHAT DRIVES US</div>
+        <h2 class="sm-reveal sm-reveal-delay-1">Our Core Values</h2>
+
+        <div class="sm-values-grid">
+            <div class="sm-value-card sm-reveal sm-reveal-delay-1">
+                <div class="sm-value-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 7v6c0 5 4 9 9 9s9-4 9-9V7l-9-5z" /><path d="m9 12 2 2 4-4" /></svg>
+                </div>
+                <h4>Reliable</h4>
+                <p>Meet international standards to operate in harsh environments, onshore and offshore.</p>
+            </div>
+
+            <div class="sm-value-card sm-reveal sm-reveal-delay-1">
+                <div class="sm-value-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z" /></svg>
+                </div>
+                <h4>Fast</h4>
+                <p>Our team provides fast and immediate response 24/7 to support our clients whenever needed.</p>
+            </div>
+
+            <div class="sm-value-card sm-reveal sm-reveal-delay-2">
+                <div class="sm-value-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.5-9-9c-1.4-3 .5-7 4-7 2 0 3.5 1 5 3 1.5-2 3-3 5-3 3.5 0 5.4 4 4 7-2 4.5-9 9-9 9z" /></svg>
+                </div>
+                <h4>Commitment</h4>
+                <p>"Our commitment is our promise." We honour every obligation to our clients, partners and stakeholders.</p>
+            </div>
+
+            <div class="sm-value-card sm-reveal sm-reveal-delay-2">
+                <div class="sm-value-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 5v6c0 5.5 3.8 9.7 8 11 4.2-1.3 8-5.5 8-11V5l-8-3z" /></svg>
+                </div>
+                <h4>Safe</h4>
+                <p>All our products and services meet the required HSE standards across every industry we serve.</p>
+            </div>
+
+            <div class="sm-value-card sm-reveal sm-reveal-delay-3">
+                <div class="sm-value-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9" /><path d="M9 12l2 2 4-4" /></svg>
+                </div>
+                <h4>Reasonable</h4>
+                <p>All our products and services are offered at a reasonable and transparent cost without compromise.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+            (function() {
+                // Hero entrance animation
+                var hero = document.getElementById('smHero');
+                window.requestAnimationFrame(function() {
+                    setTimeout(function() { hero.classList.add('sm-loaded'); }, 50);
+                });
+
+                // Scroll reveal
+                var revealEls = document.querySelectorAll('.sm-reveal');
+                var observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('sm-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+                revealEls.forEach(function(el) { observer.observe(el); });
+            })();
+    </script>
+</div>
