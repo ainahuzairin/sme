@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\Synergy Marine 12\\Documents\\GitHub\\sme\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2D7DF22-825F-15EF-8306-BAE2E8943CE7}|sme\\sme.csproj|c:\\users\\synergy marine 12\\documents\\github\\sme\\sme\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2D7DF22-825F-15EF-8306-BAE2E8943CE7}|sme\\sme.csproj|solutionrelative:sme\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2D7DF22-825F-15EF-8306-BAE2E8943CE7}|sme\\sme.csproj|c:\\users\\synergy marine 12\\documents\\github\\sme\\sme\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2D7DF22-825F-15EF-8306-BAE2E8943CE7}|sme\\sme.csproj|solutionrelative:sme\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2D7DF22-825F-15EF-8306-BAE2E8943CE7}|sme\\sme.csproj|c:\\users\\synergy marine 12\\documents\\github\\sme\\sme\\views\\home\\trackrecord.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A2D7DF22-825F-15EF-8306-BAE2E8943CE7}|sme\\sme.csproj|solutionrelative:sme\\views\\home\\trackrecord.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -13,14 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2D7DF22-825F-15EF-8306-BAE2E8943CE7}|sme\\sme.csproj|c:\\users\\synergy marine 12\\documents\\github\\sme\\sme\\views\\home\\policy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A2D7DF22-825F-15EF-8306-BAE2E8943CE7}|sme\\sme.csproj|solutionrelative:sme\\views\\home\\policy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2D7DF22-825F-15EF-8306-BAE2E8943CE7}|sme\\sme.csproj|c:\\users\\synergy marine 12\\documents\\github\\sme\\sme\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2D7DF22-825F-15EF-8306-BAE2E8943CE7}|sme\\sme.csproj|solutionrelative:sme\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2D7DF22-825F-15EF-8306-BAE2E8943CE7}|sme\\sme.csproj|c:\\users\\synergy marine 12\\documents\\github\\sme\\sme\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{A2D7DF22-825F-15EF-8306-BAE2E8943CE7}|sme\\sme.csproj|solutionrelative:sme\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2D7DF22-825F-15EF-8306-BAE2E8943CE7}|sme\\sme.csproj|c:\\users\\synergy marine 12\\documents\\github\\sme\\sme\\views\\home\\companyprofile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -77,24 +77,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "TrackRecord.cshtml",
+              "DocumentMoniker": "C:\\Users\\Synergy Marine 12\\Documents\\GitHub\\sme\\sme\\Views\\Home\\TrackRecord.cshtml",
+              "RelativeDocumentMoniker": "sme\\Views\\Home\\TrackRecord.cshtml",
+              "ToolTip": "C:\\Users\\Synergy Marine 12\\Documents\\GitHub\\sme\\sme\\Views\\Home\\TrackRecord.cshtml",
+              "RelativeToolTip": "sme\\Views\\Home\\TrackRecord.cshtml",
+              "ViewState": "AgIAADQDAAAAAAAAAAAmwEUDAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-07-20T04:27:40.31Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Synergy Marine 12\\Documents\\GitHub\\sme\\sme\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "sme\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\Synergy Marine 12\\Documents\\GitHub\\sme\\sme\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "sme\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAACcBAAAAAAAAAAAswDIBAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAPoAAAAAAAAAAAAmwP8AAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-07-20T01:25:18.503Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Policy.cshtml",
               "DocumentMoniker": "C:\\Users\\Synergy Marine 12\\Documents\\GitHub\\sme\\sme\\Views\\Home\\Policy.cshtml",
               "RelativeDocumentMoniker": "sme\\Views\\Home\\Policy.cshtml",
@@ -102,8 +114,7 @@
               "RelativeToolTip": "sme\\Views\\Home\\Policy.cshtml",
               "ViewState": "AgIAAPQCAAAAAAAAAAAswAgDAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-07-20T04:15:18.417Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-20T04:15:18.417Z"
             },
             {
               "$type": "Document",
@@ -119,20 +130,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "site.css",
               "DocumentMoniker": "C:\\Users\\Synergy Marine 12\\Documents\\GitHub\\sme\\sme\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "sme\\wwwroot\\css\\site.css",
               "ToolTip": "C:\\Users\\Synergy Marine 12\\Documents\\GitHub\\sme\\sme\\wwwroot\\css\\site.css",
               "RelativeToolTip": "sme\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAACQCAAAAAAAAAAAYwCwCAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAB0CAAAAAAAAAAAswDkCAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-07-20T02:19:15.889Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-20T02:19:15.889Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Awards.cshtml",
               "DocumentMoniker": "C:\\Users\\Synergy Marine 12\\Documents\\GitHub\\sme\\sme\\Views\\Home\\Awards.cshtml",
               "RelativeDocumentMoniker": "sme\\Views\\Home\\Awards.cshtml",
@@ -140,21 +150,7 @@
               "RelativeToolTip": "sme\\Views\\Home\\Awards.cshtml",
               "ViewState": "AgIAAFADAAAAAAAAAAAswGQDAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-07-20T04:32:13.598Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TrackRecord.cshtml",
-              "DocumentMoniker": "C:\\Users\\Synergy Marine 12\\Documents\\GitHub\\sme\\sme\\Views\\Home\\TrackRecord.cshtml",
-              "RelativeDocumentMoniker": "sme\\Views\\Home\\TrackRecord.cshtml",
-              "ToolTip": "C:\\Users\\Synergy Marine 12\\Documents\\GitHub\\sme\\sme\\Views\\Home\\TrackRecord.cshtml",
-              "RelativeToolTip": "sme\\Views\\Home\\TrackRecord.cshtml",
-              "ViewState": "AgIAANoDAAAAAAAAAAAswOQDAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-07-20T04:27:40.31Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-20T04:32:13.598Z"
             },
             {
               "$type": "Document",
@@ -178,8 +174,7 @@
               "RelativeToolTip": "sme\\Views\\Home\\CompanyProfile.cshtml",
               "ViewState": "AgIAAG0CAAAAAAAAAAApwHoCAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-07-20T06:28:51.633Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-20T06:28:51.633Z"
             },
             {
               "$type": "Document",
